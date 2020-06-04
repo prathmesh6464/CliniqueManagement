@@ -3,20 +3,14 @@ package com.bridz.clinique_management.model;
 import java.util.Map;
 import java.util.List;
 import java.util.ArrayList;
-import java.util.HashMap;
-
-import java.time.LocalTime;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 
 public class Doctor {
 
 	private long id;
 	private String name;
 	private String specialization;
-	private LocalTime availability;// (AM, PM or both)
-	private List<Map> appointment = new ArrayList<>();
-	private Map<LocalDate, Integer> datePatientId = new HashMap<>();
+	private String availability;// (AM, PM or both)
+	private List<Map<String, List<Patient>>> appointment = new ArrayList<Map<String, List<Patient>>>();
 
 	public long getId() {
 		return id;
@@ -43,32 +37,20 @@ public class Doctor {
 	}
 
 	public String getAvailability() {
-
-		DateTimeFormatter timeFormatter = DateTimeFormatter.ofPattern("KK:mm:ss a");
-		System.out.println(availability.format(timeFormatter));
-		return availability.format(timeFormatter);
+		return availability;
 	}
 
-	public void setAvailability(int hour, int minute) {
+	public void setAvailability(String availability) {
 
-		this.availability = LocalTime.of(hour, minute);
-
+		this.availability = availability;
 	}
 
-	public List<Map> getAppointment() {
+	public List<Map<String, List<Patient>>> getAppointment() {
 		return appointment;
 	}
 
-	public void setAppointment(List<Map> appointment) {
+	public void setAppointment(List<Map<String, List<Patient>>> appointment) {
 		this.appointment = appointment;
-	}
-
-	public Map<LocalDate, Integer> getDatePatientId() {
-		return datePatientId;
-	}
-
-	public void setDatePatientId(Map<LocalDate, Integer> datePatientId) {
-		this.datePatientId = datePatientId;
 	}
 
 }
