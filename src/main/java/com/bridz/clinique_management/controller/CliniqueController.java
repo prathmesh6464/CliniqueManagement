@@ -11,23 +11,24 @@ public class CliniqueController {
 	CliniqueImplementation cliniqueImplementation = GetInstance.INSTANCE.getCliniqueInstance();
 
 	public void DisplayUserMenu() {
-
-		System.out.println("Please enter number to click option");
-		System.out.println("1. Add Doctor");
-		System.out.println("2. Add Patient");
+		
+		System.out.println("\n*****************Welcome to Jio clinique******************\n");
+		System.out.println("Please enter number to click option\n");
+		System.out.println("1. Doctor");
+		System.out.println("2. Patient");
 		int chosedOption = scanner.nextInt();
 
 		switch (chosedOption) {
 		case 1:
 
-			cliniqueImplementation.addDoctor();
+			cliniqueImplementation.doctor();
 			this.DisplayUserMenu();
 
 			break;
 
 		case 2:
 
-			cliniqueImplementation.addPatient();
+			cliniqueImplementation.patient();
 			this.DisplayUserMenu();
 
 			break;
