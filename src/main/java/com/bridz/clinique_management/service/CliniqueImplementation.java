@@ -30,7 +30,6 @@ public class CliniqueImplementation implements Clinique {
 
 	public static Logger logger = Logger.getLogger(CliniqueImplementation.class);
 	int patientIndex = 0;
-	int doctorIndex = 0;
 
 	public void doctor() {
 
@@ -70,51 +69,8 @@ public class CliniqueImplementation implements Clinique {
 
 	}
 
-	public void addDoctor() {
-
-		String name;
-		String specialization;
-		int hour;
-		int minute;
-		Doctor doctor = GetInstance.INSTANCE.getDoctorInstance();
-
-		System.out.println("Please enter doctor information");
-		System.out.println("Please enter name of doctor : ");
-		name = scanner.next();
-		System.out.println("Please enter specialization of doctor : ");
-		specialization = scanner.next();
-		System.out.println("Please enter Availability time of doctor : ");
-		System.out.println("Please enter hour : ");
-		hour = scanner.nextInt();
-		System.out.println("Please enter minute : ");
-		minute = scanner.nextInt();
-
-		doctor.setId(doctorIndex);
-		doctor.setName(name);
-		doctor.setSpecialization(specialization);
-		LocalTime availability = LocalTime.of(hour, minute);
-		DateTimeFormatter timeFormatter = DateTimeFormatter.ofPattern("KK:mm:ss a");
-		System.out.println(availability.format(timeFormatter));
-		doctor.setAvailability(availability.format(timeFormatter));
-
-		doctorList.add(doctor);
-		doctorIndex++;
-
-		try {
-			objectMapper.writeValue(file, doctorList);
-			System.out.println("\nDoctor added successfully\n");
-			this.doctor();
-		} catch (Exception e) {
-			logger.info(e);
-		}
-
-	}
-
-	public void showPatients() {
-
-	}
-
 	public void patient() {
+
 		System.out.println("Please enter number related to option ");
 		System.out.println("1. Show doctor list");
 		System.out.println("2. Search doctor by using id, name, specialization or availability");
@@ -124,11 +80,11 @@ public class CliniqueImplementation implements Clinique {
 
 		switch (chosedOption) {
 		case 1:
-
+			this.showDoctors();
 			break;
 
 		case 2:
-
+			this.searchDoctor();
 			break;
 
 		case 3:
@@ -145,6 +101,57 @@ public class CliniqueImplementation implements Clinique {
 			System.out.println("\nPlease choose valid option\n");
 			this.patient();
 			break;
+		}
+
+	}
+
+	public void addDoctor() {
+
+		String name;
+		String specialization;
+		int hour;
+		int minute;
+		Doctor doctor = GetInstance.INSTANCE.getDoctorInstance();
+		InputStream inputStream;
+
+		System.out.println("Please enter doctor information");
+		System.out.println("Please enter name of doctor : ");
+		name = scanner.next();
+		System.out.println("Please enter specialization of doctor : ");
+		specialization = scanner.next();
+		System.out.println("Please enter Availability time of doctor : ");
+		System.out.println("Please enter hour : ");
+		hour = scanner.nextInt();
+		System.out.println("Please enter minute : ");
+		minute = scanner.nextInt();
+
+		doctor.setName(name);
+		doctor.setSpecialization(specialization);
+		LocalTime availability = LocalTime.of(hour, minute);
+		DateTimeFormatter timeFormatter = DateTimeFormatter.ofPattern("KK:mm:ss a");
+		System.out.println(availability.format(timeFormatter));
+		doctor.setAvailability(availability.format(timeFormatter));
+
+		try {
+
+			inputStream = GetInstance.INSTANCE.getFileInputStreamInstance();
+			TypeReference<List<Doctor>> typeReference = new TypeReference<List<Doctor>>() {
+			};
+
+			List<Doctor> doctorList = objectMapper.readValue(inputStream, typeReference);
+
+			if (doctorList.isEmpty()) {
+				doctorList.add(doctor);
+			} else {
+				doctor.setId(doctorList.size());
+				doctorList.add(doctor);
+			}
+
+			objectMapper.writeValue(file, doctorList);
+			System.out.println("\nDoctor added successfully\n");
+			this.doctor();
+		} catch (Exception e) {
+			logger.info(e);
 		}
 
 	}
@@ -287,7 +294,7 @@ public class CliniqueImplementation implements Clinique {
 
 		InputStream inputStream;
 
-		System.out.println("Seach patien by id, name or mobileNumber");
+		System.out.println("Search patien by id, name or mobileNumber");
 		String searchValue = scanner.next();
 
 		try {
@@ -304,17 +311,17 @@ public class CliniqueImplementation implements Clinique {
 			}
 
 			doctorList.forEach(doctorDetails -> {
-				
+
 				List<Map<String, List<Patient>>> doctorDetailsMapList = doctorDetails.getAppointment();
 				doctorDetailsMapList.forEach(dateAndPatientsDetail -> {
-					
+
 					dateAndPatientsDetail.entrySet().forEach(eachEntry -> {
-						
+
 						eachEntry.getValue().forEach(patientList -> {
-							
-							int index=0;							
+
+							int index = 0;
 							long isValuePresentOrNot = patientList.getId();
-							if ((patientList.getId()+"").equals(searchValue)
+							if ((patientList.getId() + "").equals(searchValue)
 									|| patientList.getName().equals(searchValue)
 									|| patientList.getMobileNumber().equals(searchValue)) {
 								System.out.println("\nAppointment date : " + eachEntry.getKey() + " : ");
@@ -332,6 +339,86 @@ public class CliniqueImplementation implements Clinique {
 
 			if (System.in.read() != -1) {
 				this.doctor();
+			}
+
+		} catch (Exception exception) {
+			logger.info(exception, exception);
+		}
+
+	}
+
+	public void showDoctors() {
+
+		System.out.println("\nList of doctors and availability of doctors : \n");
+
+		InputStream inputStream;
+
+		try {
+			inputStream = GetInstance.INSTANCE.getFileInputStreamInstance();
+			TypeReference<List<Doctor>> typeReference = new TypeReference<List<Doctor>>() {
+			};
+
+			List<Doctor> doctorList = objectMapper.readValue(inputStream, typeReference);
+
+			if (doctorList.isEmpty()) {
+
+				System.out.println("\nPatient is not available\n");
+				this.patient();
+			}
+
+			doctorList.forEach(doctorDetails -> {
+
+				System.out.println("Doctor id : " + doctorDetails.getId() + "            Name : "
+						+ doctorDetails.getName() + "            Specialization : " + doctorDetails.getSpecialization()
+						+ "            Availability : " + doctorDetails.getAvailability() + "\n");
+			});
+
+			if (System.in.read() != -1) {
+				this.doctor();
+			}
+
+		} catch (Exception exception) {
+			logger.info(exception, exception);
+		}
+
+	}
+
+	public void searchDoctor() {
+
+		InputStream inputStream;
+
+		System.out.println("Search patien by id, name, specialization : ");
+		String searchValue = scanner.next();
+
+		try {
+			inputStream = GetInstance.INSTANCE.getFileInputStreamInstance();
+			TypeReference<List<Doctor>> typeReference = new TypeReference<List<Doctor>>() {
+			};
+
+			List<Doctor> doctorList = objectMapper.readValue(inputStream, typeReference);
+
+			if (doctorList.isEmpty()) {
+
+				System.out.println("\n Doctor is not available\n");
+				this.patient();
+			}
+
+			doctorList.forEach(doctorDetails -> {
+
+				if ((doctorDetails.getId() + "").equals(searchValue)
+						|| doctorDetails.getSpecialization().equals(searchValue)
+						|| doctorDetails.getName().equals(searchValue)
+						|| doctorDetails.getAvailability().equals(searchValue)) {
+
+					System.out.println(
+							"Doctor id : " + doctorDetails.getId() + "            Name : " + doctorDetails.getName()
+									+ "            Specialization : " + doctorDetails.getSpecialization()
+									+ "            Availability : " + doctorDetails.getAvailability() + "\n");
+				}
+			});
+
+			if (System.in.read() != -1) {
+				this.patient();
 			}
 
 		} catch (Exception exception) {
