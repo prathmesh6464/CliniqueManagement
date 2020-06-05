@@ -49,7 +49,7 @@ public class CliniqueImplementation implements Clinique {
 			break;
 
 		case 2:
-
+			this.showPatientInformation();
 			break;
 
 		case 3:
@@ -233,6 +233,45 @@ public class CliniqueImplementation implements Clinique {
 						logger.info(exception, exception);
 					}
 				}
+			});
+
+		} catch (Exception exception) {
+			logger.info(exception, exception);
+		}
+
+	}
+
+	public void showPatientInformation() {
+		InputStream inputStream;
+
+		try {
+			inputStream = GetInstance.INSTANCE.getFileInputStreamInstance();
+			TypeReference<List<Doctor>> typeReference = new TypeReference<List<Doctor>>() {
+			};
+
+			List<Doctor> doctorList = objectMapper.readValue(inputStream, typeReference);
+
+			if (doctorList.isEmpty()) {
+
+				System.out.println("\nPatient is not available\n");
+				this.patient();
+			}
+
+			doctorList.forEach(doctorDetails -> {
+				List<Map<String, List<Patient>>> doctorDetailsMapList = doctorDetails.getAppointment();
+				doctorDetailsMapList.forEach(dateAndPatientsDetail -> {
+					dateAndPatientsDetail.entrySet().forEach(eachEntry -> {
+						eachEntry.getValue().forEach(patientList -> {
+							System.out.println("Appointment date : " + eachEntry.getKey() + " : ");
+							System.out.println("Patient id :" + patientList.getId());
+							System.out.println("Patient Name :" + patientList.getName());
+							System.out.println("Patient mobile number :" + patientList.getMobileNumber());
+							System.out.println("Patient age :" + patientList.getAge());
+							System.out.println("\n#############################################\n");
+						});
+					});
+					System.out.println("\n****************************************************\n");
+				});
 			});
 
 		} catch (Exception exception) {
