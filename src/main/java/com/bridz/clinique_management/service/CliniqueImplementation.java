@@ -24,9 +24,6 @@ import org.apache.log4j.Logger;
 public class CliniqueImplementation implements Clinique {
 
 	List<Doctor> doctorList = new ArrayList<Doctor>();
-	List<Patient> patientList = new ArrayList<Patient>();
-	Map<String, List<Patient>> dateAndPatient = new HashMap<>();
-	List<Map<String, List<Patient>>> appointmentMapList = new ArrayList<>();
 	Scanner scanner = GetInstance.INSTANCE.getScannerInstance();
 	File file = GetInstance.INSTANCE.getFileInstance();
 	ObjectMapper objectMapper = GetInstance.INSTANCE.getObjectMapperInstance();
@@ -106,6 +103,8 @@ public class CliniqueImplementation implements Clinique {
 
 		try {
 			objectMapper.writeValue(file, doctorList);
+			System.out.println("\nDoctor added successfully\n");
+			this.doctor();
 		} catch (Exception e) {
 			logger.info(e);
 		}
@@ -144,14 +143,14 @@ public class CliniqueImplementation implements Clinique {
 
 		default:
 
-			System.out.println("Please choose valid option");
+			System.out.println("\nPlease choose valid option\n");
 			this.patient();
 			break;
 		}
 
 	}
 
-	public void addPatient() {// date is to checked where doctor available or not
+	public void addPatient() {
 
 		String name;
 		String mobileNumber;
@@ -163,6 +162,8 @@ public class CliniqueImplementation implements Clinique {
 		LocalDate appointmentDate;
 		InputStream inputStream;
 		Patient patient = GetInstance.INSTANCE.getPatientInstance();
+		List<Patient> patientList = new ArrayList<Patient>();
+		List<Map<String, List<Patient>>> appointmentMapList = new ArrayList<>();
 
 		System.out.println("Please enter Patient information");
 		System.out.println("Please enter name of patient : ");
@@ -190,10 +191,6 @@ public class CliniqueImplementation implements Clinique {
 		patient.setAge(age);
 		patientIndex++;
 
-		patientList.add(patient);
-
-		dateAndPatient.put(appointmentDate.toString(), patientList);
-
 		try {
 			inputStream = GetInstance.INSTANCE.getFileInputStreamInstance();
 			TypeReference<List<Doctor>> typeReference = new TypeReference<List<Doctor>>() {
@@ -203,18 +200,37 @@ public class CliniqueImplementation implements Clinique {
 
 			if (doctorList.isEmpty()) {
 
-				System.out.println("Doctor is not available");
-				this.addPatient();
+				System.out.println("\nDoctor is not available\n");
+				this.patient();
 			}
 
 			doctorList.forEach(doctorDetails -> {
 				if (doctorDetails.getId() == doctorId) {
-					appointmentMapList.add(dateAndPatient);
+
+					Map<String, List<Patient>> dateAndPatientDetails = doctorDetails.getAppointment().get(doctorId);
+
+					if (dateAndPatientDetails.containsKey(appointmentDate.toString())) {
+
+						if (dateAndPatientDetails.get(appointmentDate.toString()).size() >= 5) {
+							System.out.println("\n Appointment is full please choose next date of appointment \n");
+							this.patient();
+						} else {
+							dateAndPatientDetails.get(appointmentDate.toString()).add(patient);
+						}
+					} else {
+						patientList.add(patient);
+						dateAndPatientDetails.put(appointmentDate.toString(), patientList);
+					}
+
+					appointmentMapList.add(dateAndPatientDetails);
 					doctorDetails.setAppointment(appointmentMapList);
+
 					try {
 						objectMapper.writeValue(file, doctorList);
-					} catch (Exception e) {
-						logger.info(e);
+						System.out.println("\nPatient added successfully\n");
+						this.patient();
+					} catch (Exception exception) {
+						logger.info(exception, exception);
 					}
 				}
 			});
