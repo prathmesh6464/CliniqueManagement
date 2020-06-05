@@ -2,9 +2,8 @@ package com.bridz.clinique_management.service;
 
 import java.io.File;
 import java.io.InputStream;
-import java.io.ObjectInputStream;
+
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.Map;
 import java.util.List;
 import java.util.Scanner;
@@ -16,6 +15,7 @@ import java.time.format.DateTimeFormatter;
 import com.bridz.clinique_management.model.Doctor;
 import com.bridz.clinique_management.model.Patient;
 import com.bridz.clinique_management.pattern.GetInstance;
+
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -53,8 +53,7 @@ public class CliniqueImplementation implements Clinique {
 			break;
 
 		case 3:
-
-			this.addPatient();
+			this.serachPatient();
 			break;
 
 		case 4:
@@ -273,6 +272,67 @@ public class CliniqueImplementation implements Clinique {
 					System.out.println("\n****************************************************\n");
 				});
 			});
+
+			if (System.in.read() != -1) {
+				this.doctor();
+			}
+
+		} catch (Exception exception) {
+			logger.info(exception, exception);
+		}
+
+	}
+
+	public void serachPatient() {
+
+		InputStream inputStream;
+
+		System.out.println("Seach patien by id, name or mobileNumber");
+		String searchValue = scanner.next();
+
+		try {
+			inputStream = GetInstance.INSTANCE.getFileInputStreamInstance();
+			TypeReference<List<Doctor>> typeReference = new TypeReference<List<Doctor>>() {
+			};
+
+			List<Doctor> doctorList = objectMapper.readValue(inputStream, typeReference);
+
+			if (doctorList.isEmpty()) {
+
+				System.out.println("\nPatient is not available\n");
+				this.patient();
+			}
+
+			doctorList.forEach(doctorDetails -> {
+				
+				List<Map<String, List<Patient>>> doctorDetailsMapList = doctorDetails.getAppointment();
+				doctorDetailsMapList.forEach(dateAndPatientsDetail -> {
+					
+					dateAndPatientsDetail.entrySet().forEach(eachEntry -> {
+						
+						eachEntry.getValue().forEach(patientList -> {
+							
+							int index=0;							
+							long isValuePresentOrNot = patientList.getId();
+							if ((patientList.getId()+"").equals(searchValue)
+									|| patientList.getName().equals(searchValue)
+									|| patientList.getMobileNumber().equals(searchValue)) {
+								System.out.println("\nAppointment date : " + eachEntry.getKey() + " : ");
+								System.out.println("Patient id :" + patientList.getId());
+								System.out.println("Patient Name :" + patientList.getName());
+								System.out.println("Patient mobile number :" + patientList.getMobileNumber());
+								System.out.println("Patient age :" + patientList.getAge());
+								System.out.println("\n#############################################\n");
+								isValuePresentOrNot++;
+							}
+						});
+					});
+				});
+			});
+
+			if (System.in.read() != -1) {
+				this.doctor();
+			}
 
 		} catch (Exception exception) {
 			logger.info(exception, exception);
