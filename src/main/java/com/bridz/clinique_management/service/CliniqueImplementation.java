@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.InputStream;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Map;
 import java.util.List;
 import java.util.Scanner;
@@ -30,13 +31,16 @@ public class CliniqueImplementation implements Clinique {
 
 	public static Logger logger = Logger.getLogger(CliniqueImplementation.class);
 	int patientIndex = 0;
+	int visitedPetientCount = 0;
+	int patientVisitorComparater = 0;
+	String popularDoctor;
 
 	public void doctor() {
 
 		System.out.println("Please enter number related to option ");
 		System.out.println("1. Add doctor");
-		System.out.println("2. Show patient list");
-		System.out.println("3. Search patient by using id, name or mobile number");
+		System.out.println("2. Show doctor list");
+		System.out.println("3. Search doctor by using id, name, specialization");
 		System.out.println("4. Quite");
 
 		int chosedOption = scanner.nextInt();
@@ -48,11 +52,11 @@ public class CliniqueImplementation implements Clinique {
 			break;
 
 		case 2:
-			this.showPatientInformation();
+			this.showDoctors();
 			break;
 
 		case 3:
-			this.serachPatient();
+			this.searchDoctor();
 			break;
 
 		case 4:
@@ -72,24 +76,28 @@ public class CliniqueImplementation implements Clinique {
 	public void patient() {
 
 		System.out.println("Please enter number related to option ");
-		System.out.println("1. Show doctor list");
-		System.out.println("2. Search doctor by using id, name, specialization or availability");
-		System.out.println("3. Add patient");
+		System.out.println("1. Add patient");
+		System.out.println("2. Show patient list");
+		System.out.println("3. Search patient by using id, name or mobile number");
 		System.out.println("4. Quite");
+
 		int chosedOption = scanner.nextInt();
 
 		switch (chosedOption) {
 		case 1:
-			this.showDoctors();
+			this.addPatient();
+			;
 			break;
 
 		case 2:
-			this.searchDoctor();
+			this.showPatientInformation();
+			;
 			break;
 
 		case 3:
 
-			this.addPatient();
+			this.serachPatient();
+			;
 			break;
 		case 4:
 
@@ -213,31 +221,58 @@ public class CliniqueImplementation implements Clinique {
 			doctorList.forEach(doctorDetails -> {
 				if (doctorDetails.getId() == doctorId) {
 
-					Map<String, List<Patient>> dateAndPatientDetails = doctorDetails.getAppointment().get(doctorId);
+					if (doctorDetails.getAppointment().isEmpty()) {
 
-					if (dateAndPatientDetails.containsKey(appointmentDate.toString())) {
-
-						if (dateAndPatientDetails.get(appointmentDate.toString()).size() >= 5) {
-							System.out.println("\n Appointment is full please choose next date of appointment \n");
-							this.patient();
-						} else {
-							dateAndPatientDetails.get(appointmentDate.toString()).add(patient);
-						}
-					} else {
 						patientList.add(patient);
+						Map<String, List<Patient>> dateAndPatientDetails = new HashMap<>();
 						dateAndPatientDetails.put(appointmentDate.toString(), patientList);
+						patientIndex++;
+
+						appointmentMapList.add(dateAndPatientDetails);
+						doctorDetails.setAppointment(appointmentMapList);
+
+						try {
+							objectMapper.writeValue(file, doctorList);
+							System.out.println("\nPatient added successfully\n");
+							this.patient();
+						} catch (Exception exception) {
+							logger.info(exception, exception);
+						}
+
 					}
 
-					appointmentMapList.add(dateAndPatientDetails);
-					doctorDetails.setAppointment(appointmentMapList);
+					doctorDetails.getAppointment().forEach(dateAndPatientDetails -> {
 
-					try {
-						objectMapper.writeValue(file, doctorList);
-						System.out.println("\nPatient added successfully\n");
-						this.patient();
-					} catch (Exception exception) {
-						logger.info(exception, exception);
-					}
+						if (dateAndPatientDetails.containsKey(appointmentDate.toString())) {
+
+							if (dateAndPatientDetails.get(appointmentDate.toString()).size() >= 5) {
+								System.out.println("\n Appointment is full please choose next date of appointment \n");
+								this.patient();
+							} else {
+								dateAndPatientDetails.get(appointmentDate.toString()).add(patient);
+								patientIndex++;
+							}
+						} else {
+							patientList.add(patient);
+							dateAndPatientDetails.put(appointmentDate.toString(), patientList);
+							patientIndex++;
+						}
+
+						appointmentMapList.add(dateAndPatientDetails);
+						doctorDetails.setAppointment(appointmentMapList);
+
+						try {
+							objectMapper.writeValue(file, doctorList);
+							System.out.println("\nPatient added successfully\n");
+							this.patient();
+						} catch (Exception exception) {
+							logger.info(exception, exception);
+						}
+
+					});
+				} else {
+					System.out.println("Enter id is not available");
+					this.patient();
 				}
 			});
 
@@ -276,12 +311,11 @@ public class CliniqueImplementation implements Clinique {
 							System.out.println("\n#############################################\n");
 						});
 					});
-					System.out.println("\n****************************************************\n");
 				});
 			});
 
 			if (System.in.read() != -1) {
-				this.doctor();
+				this.patient();
 			}
 
 		} catch (Exception exception) {
@@ -425,5 +459,100 @@ public class CliniqueImplementation implements Clinique {
 			logger.info(exception, exception);
 		}
 
+	}
+
+	public void doctorPatientReport() {
+
+		InputStream inputStream;
+
+		System.out.println("Doctor petient report : ");
+
+		try {
+			inputStream = GetInstance.INSTANCE.getFileInputStreamInstance();
+			TypeReference<List<Doctor>> typeReference = new TypeReference<List<Doctor>>() {
+			};
+
+			List<Doctor> doctorList = objectMapper.readValue(inputStream, typeReference);
+
+			if (doctorList.isEmpty()) {
+
+				System.out.println("\n Doctor is not available\n");
+				this.patient();
+			}
+
+			doctorList.forEach(doctorDetails -> {
+				List<Map<String, List<Patient>>> doctorDetailsMapList = doctorDetails.getAppointment();
+				doctorDetailsMapList.forEach(dateAndPatientsDetail -> {
+					dateAndPatientsDetail.entrySet().forEach(eachEntry -> {
+						eachEntry.getValue().forEach(patientList -> {
+							System.out.println("\nAppointment date : " + eachEntry.getKey() + " : ");
+							System.out.println("Doctor id : " + doctorDetails.getId() + " : ");
+							System.out.println("Doctor name : " + doctorDetails.getName() + " : ");
+							System.out.println("Doctor specialization : " + doctorDetails.getSpecialization() + " : ");
+							System.out.println("Patient id :" + patientList.getId());
+							System.out.println("Patient Name :" + patientList.getName());
+							System.out.println("Patient mobile number :" + patientList.getMobileNumber());
+							System.out.println("Patient age :" + patientList.getAge());
+							System.out.println("\n#############################################\n");
+						});
+					});
+				});
+			});
+
+			if (System.in.read() != -1) {
+				GetInstance.INSTANCE.getCliniqueControllerInstance().DisplayUserMenu();
+			}
+
+		} catch (Exception exception) {
+			logger.info(exception, exception);
+		}
+
+	}
+
+	public void popularSpecialization() {
+
+	}
+
+	public void popularDoctor() {
+
+		InputStream inputStream;
+
+		System.out.println("Popular doctor : ");
+
+		try {
+			inputStream = GetInstance.INSTANCE.getFileInputStreamInstance();
+			TypeReference<List<Doctor>> typeReference = new TypeReference<List<Doctor>>() {
+			};
+
+			List<Doctor> doctorList = objectMapper.readValue(inputStream, typeReference);
+
+			if (doctorList.isEmpty()) {
+
+				System.out.println("\n Doctor is not available\n");
+				this.patient();
+			}
+
+			doctorList.forEach(doctorDetails -> {
+				List<Map<String, List<Patient>>> doctorDetailsMapList = doctorDetails.getAppointment();
+				doctorDetailsMapList.forEach(dateAndPatientsDetail -> {
+					dateAndPatientsDetail.entrySet().forEach(eachEntry -> {
+						visitedPetientCount += eachEntry.getValue().size();
+					});
+				});
+				if (visitedPetientCount > patientVisitorComparater) {
+					popularDoctor = doctorDetails.getName();
+					patientVisitorComparater = visitedPetientCount;
+					visitedPetientCount = 0;
+				}
+			});
+
+			System.out.println(popularDoctor);
+			if (System.in.read() != -1) {
+				GetInstance.INSTANCE.getCliniqueControllerInstance().DisplayUserMenu();
+			}
+
+		} catch (Exception exception) {
+			logger.info(exception, exception);
+		}
 	}
 }
