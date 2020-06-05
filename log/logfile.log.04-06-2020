@@ -1,0 +1,787 @@
+2020-06-04 07:42:38,499  INFO [main] - com.bridz.clinique_management.CliniqueManagementApplication.main 13 - Main method called
+2020-06-04 07:43:19,767  INFO [main] - com.bridz.clinique_management.CliniqueManagementApplication.main 13 - Main method called
+2020-06-04 07:44:08,389  INFO [main] - com.bridz.clinique_management.service.CliniqueImplementation.addPatient 204 - com.fasterxml.jackson.databind.exc.InvalidDefinitionException: Cannot find a (Map) Key deserializer for type [simple type, class java.time.LocalDate]
+ at [Source: (FileInputStream); line: 1, column: 1]
+com.fasterxml.jackson.databind.exc.InvalidDefinitionException: Cannot find a (Map) Key deserializer for type [simple type, class java.time.LocalDate]
+ at [Source: (FileInputStream); line: 1, column: 1]
+	at com.fasterxml.jackson.databind.exc.InvalidDefinitionException.from(InvalidDefinitionException.java:67)
+	at com.fasterxml.jackson.databind.DeserializationContext.reportBadDefinition(DeserializationContext.java:1611)
+	at com.fasterxml.jackson.databind.deser.DeserializerCache._handleUnknownKeyDeserializer(DeserializerCache.java:602)
+	at com.fasterxml.jackson.databind.deser.DeserializerCache.findKeyDeserializer(DeserializerCache.java:168)
+	at com.fasterxml.jackson.databind.DeserializationContext.findKeyDeserializer(DeserializationContext.java:514)
+	at com.fasterxml.jackson.databind.deser.std.MapDeserializer.createContextual(MapDeserializer.java:248)
+	at com.fasterxml.jackson.databind.DeserializationContext.handlePrimaryContextualization(DeserializationContext.java:665)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializerBase.resolve(BeanDeserializerBase.java:496)
+	at com.fasterxml.jackson.databind.deser.DeserializerCache._createAndCache2(DeserializerCache.java:293)
+	at com.fasterxml.jackson.databind.deser.DeserializerCache._createAndCacheValueDeserializer(DeserializerCache.java:244)
+	at com.fasterxml.jackson.databind.deser.DeserializerCache.findValueDeserializer(DeserializerCache.java:142)
+	at com.fasterxml.jackson.databind.DeserializationContext.findContextualValueDeserializer(DeserializationContext.java:458)
+	at com.fasterxml.jackson.databind.deser.std.CollectionDeserializer.createContextual(CollectionDeserializer.java:182)
+	at com.fasterxml.jackson.databind.deser.std.CollectionDeserializer.createContextual(CollectionDeserializer.java:27)
+	at com.fasterxml.jackson.databind.DeserializationContext.handleSecondaryContextualization(DeserializationContext.java:696)
+	at com.fasterxml.jackson.databind.DeserializationContext.findRootValueDeserializer(DeserializationContext.java:496)
+	at com.fasterxml.jackson.databind.ObjectMapper._findRootDeserializer(ObjectMapper.java:4669)
+	at com.fasterxml.jackson.databind.ObjectMapper._readMapAndClose(ObjectMapper.java:4478)
+	at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:3479)
+	at com.bridz.clinique_management.service.CliniqueImplementation.addPatient(CliniqueImplementation.java:189)
+	at com.bridz.clinique_management.service.CliniqueImplementation.patient(CliniqueImplementation.java:132)
+	at com.bridz.clinique_management.controller.CliniqueController.DisplayUserMenu(CliniqueController.java:31)
+	at com.bridz.clinique_management.controller.CliniqueController.DisplayUserMenu(CliniqueController.java:25)
+	at com.bridz.clinique_management.CliniqueManagementApplication.main(CliniqueManagementApplication.java:15)
+2020-06-04 08:13:41,779  INFO [main] - com.bridz.clinique_management.CliniqueManagementApplication.main 13 - Main method called
+2020-06-04 08:14:05,553  INFO [main] - com.bridz.clinique_management.service.CliniqueImplementation.addPatient 205 - com.fasterxml.jackson.databind.exc.InvalidDefinitionException: Cannot construct instance of `java.time.LocalTime` (no Creators, like default constructor, exist): no String-argument constructor/factory method to deserialize from String value ('02:05:00 AM')
+ at [Source: (FileInputStream); line: 1, column: 67] (through reference chain: java.util.ArrayList[0]->com.bridz.clinique_management.model.Doctor["availability"])
+com.fasterxml.jackson.databind.exc.InvalidDefinitionException: Cannot construct instance of `java.time.LocalTime` (no Creators, like default constructor, exist): no String-argument constructor/factory method to deserialize from String value ('02:05:00 AM')
+ at [Source: (FileInputStream); line: 1, column: 67] (through reference chain: java.util.ArrayList[0]->com.bridz.clinique_management.model.Doctor["availability"])
+	at com.fasterxml.jackson.databind.exc.InvalidDefinitionException.from(InvalidDefinitionException.java:67)
+	at com.fasterxml.jackson.databind.DeserializationContext.reportBadDefinition(DeserializationContext.java:1611)
+	at com.fasterxml.jackson.databind.DatabindContext.reportBadDefinition(DatabindContext.java:400)
+	at com.fasterxml.jackson.databind.DeserializationContext.handleMissingInstantiator(DeserializationContext.java:1077)
+	at com.fasterxml.jackson.databind.deser.ValueInstantiator._createFromStringFallbacks(ValueInstantiator.java:371)
+	at com.fasterxml.jackson.databind.deser.std.StdValueInstantiator.createFromString(StdValueInstantiator.java:323)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializerBase.deserializeFromString(BeanDeserializerBase.java:1396)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer._deserializeOther(BeanDeserializer.java:176)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserialize(BeanDeserializer.java:166)
+	at com.fasterxml.jackson.databind.deser.impl.FieldProperty.deserializeAndSet(FieldProperty.java:138)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.vanillaDeserialize(BeanDeserializer.java:293)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserialize(BeanDeserializer.java:156)
+	at com.fasterxml.jackson.databind.deser.std.CollectionDeserializer.deserialize(CollectionDeserializer.java:285)
+	at com.fasterxml.jackson.databind.deser.std.CollectionDeserializer.deserialize(CollectionDeserializer.java:244)
+	at com.fasterxml.jackson.databind.deser.std.CollectionDeserializer.deserialize(CollectionDeserializer.java:27)
+	at com.fasterxml.jackson.databind.ObjectMapper._readMapAndClose(ObjectMapper.java:4482)
+	at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:3479)
+	at com.bridz.clinique_management.service.CliniqueImplementation.addPatient(CliniqueImplementation.java:190)
+	at com.bridz.clinique_management.service.CliniqueImplementation.patient(CliniqueImplementation.java:133)
+	at com.bridz.clinique_management.controller.CliniqueController.DisplayUserMenu(CliniqueController.java:31)
+	at com.bridz.clinique_management.CliniqueManagementApplication.main(CliniqueManagementApplication.java:15)
+2020-06-04 08:19:59,200  INFO [main] - com.bridz.clinique_management.CliniqueManagementApplication.main 13 - Main method called
+2020-06-04 08:20:05,414  INFO [main] - com.bridz.clinique_management.CliniqueManagementApplication.main 13 - Main method called
+2020-06-04 08:27:42,694  INFO [main] - com.bridz.clinique_management.CliniqueManagementApplication.main 13 - Main method called
+2020-06-04 08:28:17,273  INFO [main] - com.bridz.clinique_management.service.CliniqueImplementation.addPatient 204 - com.fasterxml.jackson.databind.exc.InvalidDefinitionException: Cannot find a (Map) Key deserializer for type [simple type, class java.time.LocalDate]
+ at [Source: (FileInputStream); line: 1, column: 1]
+com.fasterxml.jackson.databind.exc.InvalidDefinitionException: Cannot find a (Map) Key deserializer for type [simple type, class java.time.LocalDate]
+ at [Source: (FileInputStream); line: 1, column: 1]
+	at com.fasterxml.jackson.databind.exc.InvalidDefinitionException.from(InvalidDefinitionException.java:67)
+	at com.fasterxml.jackson.databind.DeserializationContext.reportBadDefinition(DeserializationContext.java:1611)
+	at com.fasterxml.jackson.databind.deser.DeserializerCache._handleUnknownKeyDeserializer(DeserializerCache.java:602)
+	at com.fasterxml.jackson.databind.deser.DeserializerCache.findKeyDeserializer(DeserializerCache.java:168)
+	at com.fasterxml.jackson.databind.DeserializationContext.findKeyDeserializer(DeserializationContext.java:514)
+	at com.fasterxml.jackson.databind.deser.std.MapDeserializer.createContextual(MapDeserializer.java:248)
+	at com.fasterxml.jackson.databind.DeserializationContext.handlePrimaryContextualization(DeserializationContext.java:665)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializerBase.resolve(BeanDeserializerBase.java:496)
+	at com.fasterxml.jackson.databind.deser.DeserializerCache._createAndCache2(DeserializerCache.java:293)
+	at com.fasterxml.jackson.databind.deser.DeserializerCache._createAndCacheValueDeserializer(DeserializerCache.java:244)
+	at com.fasterxml.jackson.databind.deser.DeserializerCache.findValueDeserializer(DeserializerCache.java:142)
+	at com.fasterxml.jackson.databind.DeserializationContext.findContextualValueDeserializer(DeserializationContext.java:458)
+	at com.fasterxml.jackson.databind.deser.std.CollectionDeserializer.createContextual(CollectionDeserializer.java:182)
+	at com.fasterxml.jackson.databind.deser.std.CollectionDeserializer.createContextual(CollectionDeserializer.java:27)
+	at com.fasterxml.jackson.databind.DeserializationContext.handleSecondaryContextualization(DeserializationContext.java:696)
+	at com.fasterxml.jackson.databind.DeserializationContext.findRootValueDeserializer(DeserializationContext.java:496)
+	at com.fasterxml.jackson.databind.ObjectMapper._findRootDeserializer(ObjectMapper.java:4669)
+	at com.fasterxml.jackson.databind.ObjectMapper._readMapAndClose(ObjectMapper.java:4478)
+	at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:3479)
+	at com.bridz.clinique_management.service.CliniqueImplementation.addPatient(CliniqueImplementation.java:189)
+	at com.bridz.clinique_management.service.CliniqueImplementation.patient(CliniqueImplementation.java:132)
+	at com.bridz.clinique_management.controller.CliniqueController.DisplayUserMenu(CliniqueController.java:31)
+	at com.bridz.clinique_management.CliniqueManagementApplication.main(CliniqueManagementApplication.java:15)
+2020-06-04 08:44:58,070  INFO [main] - com.bridz.clinique_management.CliniqueManagementApplication.main 13 - Main method called
+2020-06-04 08:48:26,602  INFO [main] - com.bridz.clinique_management.CliniqueManagementApplication.main 13 - Main method called
+2020-06-04 08:48:57,925  INFO [main] - com.bridz.clinique_management.CliniqueManagementApplication.main 13 - Main method called
+2020-06-04 08:49:48,887  INFO [main] - com.bridz.clinique_management.CliniqueManagementApplication.main 13 - Main method called
+2020-06-04 08:50:34,393  INFO [main] - com.bridz.clinique_management.service.CliniqueImplementation.addPatient 204 - com.fasterxml.jackson.databind.exc.InvalidDefinitionException: Cannot construct instance of `java.time.LocalTime` (no Creators, like default constructor, exist): no String-argument constructor/factory method to deserialize from String value ('04:05:00 AM')
+ at [Source: (FileInputStream); line: 1, column: 68] (through reference chain: java.util.ArrayList[0]->com.bridz.clinique_management.model.Doctor["availability"])
+com.fasterxml.jackson.databind.exc.InvalidDefinitionException: Cannot construct instance of `java.time.LocalTime` (no Creators, like default constructor, exist): no String-argument constructor/factory method to deserialize from String value ('04:05:00 AM')
+ at [Source: (FileInputStream); line: 1, column: 68] (through reference chain: java.util.ArrayList[0]->com.bridz.clinique_management.model.Doctor["availability"])
+	at com.fasterxml.jackson.databind.exc.InvalidDefinitionException.from(InvalidDefinitionException.java:67)
+	at com.fasterxml.jackson.databind.DeserializationContext.reportBadDefinition(DeserializationContext.java:1611)
+	at com.fasterxml.jackson.databind.DatabindContext.reportBadDefinition(DatabindContext.java:400)
+	at com.fasterxml.jackson.databind.DeserializationContext.handleMissingInstantiator(DeserializationContext.java:1077)
+	at com.fasterxml.jackson.databind.deser.ValueInstantiator._createFromStringFallbacks(ValueInstantiator.java:371)
+	at com.fasterxml.jackson.databind.deser.std.StdValueInstantiator.createFromString(StdValueInstantiator.java:323)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializerBase.deserializeFromString(BeanDeserializerBase.java:1396)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer._deserializeOther(BeanDeserializer.java:176)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserialize(BeanDeserializer.java:166)
+	at com.fasterxml.jackson.databind.deser.impl.FieldProperty.deserializeAndSet(FieldProperty.java:138)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.vanillaDeserialize(BeanDeserializer.java:293)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserialize(BeanDeserializer.java:156)
+	at com.fasterxml.jackson.databind.deser.std.CollectionDeserializer.deserialize(CollectionDeserializer.java:285)
+	at com.fasterxml.jackson.databind.deser.std.CollectionDeserializer.deserialize(CollectionDeserializer.java:244)
+	at com.fasterxml.jackson.databind.deser.std.CollectionDeserializer.deserialize(CollectionDeserializer.java:27)
+	at com.fasterxml.jackson.databind.ObjectMapper._readMapAndClose(ObjectMapper.java:4482)
+	at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:3479)
+	at com.bridz.clinique_management.service.CliniqueImplementation.addPatient(CliniqueImplementation.java:189)
+	at com.bridz.clinique_management.service.CliniqueImplementation.patient(CliniqueImplementation.java:132)
+	at com.bridz.clinique_management.controller.CliniqueController.DisplayUserMenu(CliniqueController.java:31)
+	at com.bridz.clinique_management.controller.CliniqueController.DisplayUserMenu(CliniqueController.java:25)
+	at com.bridz.clinique_management.CliniqueManagementApplication.main(CliniqueManagementApplication.java:15)
+2020-06-04 08:55:12,064  INFO [main] - com.bridz.clinique_management.CliniqueManagementApplication.main 13 - Main method called
+2020-06-04 09:20:42,430  INFO [main] - com.bridz.clinique_management.CliniqueManagementApplication.main 13 - Main method called
+2020-06-04 09:21:12,335  INFO [main] - com.bridz.clinique_management.service.CliniqueImplementation.addPatient 207 - com.fasterxml.jackson.databind.exc.MismatchedInputException: Cannot deserialize instance of `com.bridz.clinique_management.model.Doctor` out of START_ARRAY token
+ at [Source: (FileInputStream); line: 1, column: 1]
+com.fasterxml.jackson.databind.exc.MismatchedInputException: Cannot deserialize instance of `com.bridz.clinique_management.model.Doctor` out of START_ARRAY token
+ at [Source: (FileInputStream); line: 1, column: 1]
+	at com.fasterxml.jackson.databind.exc.MismatchedInputException.from(MismatchedInputException.java:59)
+	at com.fasterxml.jackson.databind.DeserializationContext.reportInputMismatch(DeserializationContext.java:1464)
+	at com.fasterxml.jackson.databind.DeserializationContext.handleUnexpectedToken(DeserializationContext.java:1238)
+	at com.fasterxml.jackson.databind.DeserializationContext.handleUnexpectedToken(DeserializationContext.java:1190)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer._deserializeFromArray(BeanDeserializer.java:604)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer._deserializeOther(BeanDeserializer.java:190)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserialize(BeanDeserializer.java:166)
+	at com.fasterxml.jackson.databind.ObjectMapper._readMapAndClose(ObjectMapper.java:4482)
+	at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:3479)
+	at com.bridz.clinique_management.service.CliniqueImplementation.addPatient(CliniqueImplementation.java:190)
+	at com.bridz.clinique_management.service.CliniqueImplementation.patient(CliniqueImplementation.java:132)
+	at com.bridz.clinique_management.controller.CliniqueController.DisplayUserMenu(CliniqueController.java:31)
+	at com.bridz.clinique_management.CliniqueManagementApplication.main(CliniqueManagementApplication.java:15)
+2020-06-04 09:21:40,258  INFO [main] - com.bridz.clinique_management.CliniqueManagementApplication.main 13 - Main method called
+2020-06-04 09:30:15,734  INFO [main] - com.bridz.clinique_management.CliniqueManagementApplication.main 13 - Main method called
+2020-06-04 09:30:44,898  INFO [main] - com.bridz.clinique_management.CliniqueManagementApplication.main 13 - Main method called
+2020-06-04 09:31:40,500  INFO [main] - com.bridz.clinique_management.CliniqueManagementApplication.main 13 - Main method called
+2020-06-04 09:32:21,218  INFO [main] - com.bridz.clinique_management.service.CliniqueImplementation.addPatient 204 - com.fasterxml.jackson.databind.exc.InvalidDefinitionException: Cannot construct instance of `java.time.LocalTime` (no Creators, like default constructor, exist): no String-argument constructor/factory method to deserialize from String value ('04:50:00 AM')
+ at [Source: (FileInputStream); line: 1, column: 68] (through reference chain: java.util.ArrayList[0]->com.bridz.clinique_management.model.Doctor["availability"])
+com.fasterxml.jackson.databind.exc.InvalidDefinitionException: Cannot construct instance of `java.time.LocalTime` (no Creators, like default constructor, exist): no String-argument constructor/factory method to deserialize from String value ('04:50:00 AM')
+ at [Source: (FileInputStream); line: 1, column: 68] (through reference chain: java.util.ArrayList[0]->com.bridz.clinique_management.model.Doctor["availability"])
+	at com.fasterxml.jackson.databind.exc.InvalidDefinitionException.from(InvalidDefinitionException.java:67)
+	at com.fasterxml.jackson.databind.DeserializationContext.reportBadDefinition(DeserializationContext.java:1611)
+	at com.fasterxml.jackson.databind.DatabindContext.reportBadDefinition(DatabindContext.java:400)
+	at com.fasterxml.jackson.databind.DeserializationContext.handleMissingInstantiator(DeserializationContext.java:1077)
+	at com.fasterxml.jackson.databind.deser.ValueInstantiator._createFromStringFallbacks(ValueInstantiator.java:371)
+	at com.fasterxml.jackson.databind.deser.std.StdValueInstantiator.createFromString(StdValueInstantiator.java:323)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializerBase.deserializeFromString(BeanDeserializerBase.java:1396)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer._deserializeOther(BeanDeserializer.java:176)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserialize(BeanDeserializer.java:166)
+	at com.fasterxml.jackson.databind.deser.impl.FieldProperty.deserializeAndSet(FieldProperty.java:138)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.vanillaDeserialize(BeanDeserializer.java:293)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserialize(BeanDeserializer.java:156)
+	at com.fasterxml.jackson.databind.deser.std.CollectionDeserializer.deserialize(CollectionDeserializer.java:285)
+	at com.fasterxml.jackson.databind.deser.std.CollectionDeserializer.deserialize(CollectionDeserializer.java:244)
+	at com.fasterxml.jackson.databind.deser.std.CollectionDeserializer.deserialize(CollectionDeserializer.java:27)
+	at com.fasterxml.jackson.databind.ObjectMapper._readMapAndClose(ObjectMapper.java:4482)
+	at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:3479)
+	at com.bridz.clinique_management.service.CliniqueImplementation.addPatient(CliniqueImplementation.java:189)
+	at com.bridz.clinique_management.service.CliniqueImplementation.patient(CliniqueImplementation.java:132)
+	at com.bridz.clinique_management.controller.CliniqueController.DisplayUserMenu(CliniqueController.java:31)
+	at com.bridz.clinique_management.controller.CliniqueController.DisplayUserMenu(CliniqueController.java:25)
+	at com.bridz.clinique_management.CliniqueManagementApplication.main(CliniqueManagementApplication.java:15)
+2020-06-04 09:46:51,451  INFO [main] - com.bridz.clinique_management.CliniqueManagementApplication.main 13 - Main method called
+2020-06-04 09:47:34,365  INFO [main] - com.bridz.clinique_management.service.CliniqueImplementation.addPatient 207 - java.io.StreamCorruptedException: invalid stream header: 5B7B2269
+java.io.StreamCorruptedException: invalid stream header: 5B7B2269
+	at java.io.ObjectInputStream.readStreamHeader(Unknown Source)
+	at java.io.ObjectInputStream.<init>(Unknown Source)
+	at com.bridz.clinique_management.service.CliniqueImplementation.addPatient(CliniqueImplementation.java:187)
+	at com.bridz.clinique_management.service.CliniqueImplementation.patient(CliniqueImplementation.java:133)
+	at com.bridz.clinique_management.controller.CliniqueController.DisplayUserMenu(CliniqueController.java:31)
+	at com.bridz.clinique_management.CliniqueManagementApplication.main(CliniqueManagementApplication.java:15)
+2020-06-04 09:49:50,944  INFO [main] - com.bridz.clinique_management.CliniqueManagementApplication.main 13 - Main method called
+2020-06-04 09:50:12,264  INFO [main] - com.bridz.clinique_management.service.CliniqueImplementation.addPatient 207 - java.io.EOFException
+java.io.EOFException
+	at java.io.ObjectInputStream$PeekInputStream.readFully(Unknown Source)
+	at java.io.ObjectInputStream$BlockDataInputStream.readShort(Unknown Source)
+	at java.io.ObjectInputStream.readStreamHeader(Unknown Source)
+	at java.io.ObjectInputStream.<init>(Unknown Source)
+	at com.bridz.clinique_management.service.CliniqueImplementation.addPatient(CliniqueImplementation.java:187)
+	at com.bridz.clinique_management.service.CliniqueImplementation.patient(CliniqueImplementation.java:133)
+	at com.bridz.clinique_management.controller.CliniqueController.DisplayUserMenu(CliniqueController.java:31)
+	at com.bridz.clinique_management.CliniqueManagementApplication.main(CliniqueManagementApplication.java:15)
+2020-06-04 09:55:34,542  INFO [main] - com.bridz.clinique_management.CliniqueManagementApplication.main 13 - Main method called
+2020-06-04 10:01:07,278  INFO [main] - com.bridz.clinique_management.service.CliniqueImplementation.addPatient 208 - java.io.EOFException
+java.io.EOFException
+	at java.io.ObjectInputStream$PeekInputStream.readFully(Unknown Source)
+	at java.io.ObjectInputStream$BlockDataInputStream.readShort(Unknown Source)
+	at java.io.ObjectInputStream.readStreamHeader(Unknown Source)
+	at java.io.ObjectInputStream.<init>(Unknown Source)
+	at com.bridz.clinique_management.service.CliniqueImplementation.addPatient(CliniqueImplementation.java:187)
+	at com.bridz.clinique_management.service.CliniqueImplementation.patient(CliniqueImplementation.java:133)
+	at com.bridz.clinique_management.controller.CliniqueController.DisplayUserMenu(CliniqueController.java:31)
+	at com.bridz.clinique_management.CliniqueManagementApplication.main(CliniqueManagementApplication.java:15)
+2020-06-04 10:07:15,230  INFO [main] - com.bridz.clinique_management.CliniqueManagementApplication.main 13 - Main method called
+2020-06-04 10:07:32,844  INFO [main] - com.bridz.clinique_management.CliniqueManagementApplication.main 13 - Main method called
+2020-06-04 10:08:34,670  INFO [main] - com.bridz.clinique_management.CliniqueManagementApplication.main 13 - Main method called
+2020-06-04 10:15:59,588  INFO [main] - com.bridz.clinique_management.CliniqueManagementApplication.main 13 - Main method called
+2020-06-04 10:16:53,831  INFO [main] - com.bridz.clinique_management.service.CliniqueImplementation.addPatient 204 - com.fasterxml.jackson.databind.exc.InvalidDefinitionException: Cannot find a (Map) Key deserializer for type [simple type, class java.time.LocalDate]
+ at [Source: (FileInputStream); line: 1, column: 1]
+com.fasterxml.jackson.databind.exc.InvalidDefinitionException: Cannot find a (Map) Key deserializer for type [simple type, class java.time.LocalDate]
+ at [Source: (FileInputStream); line: 1, column: 1]
+	at com.fasterxml.jackson.databind.exc.InvalidDefinitionException.from(InvalidDefinitionException.java:67)
+	at com.fasterxml.jackson.databind.DeserializationContext.reportBadDefinition(DeserializationContext.java:1611)
+	at com.fasterxml.jackson.databind.deser.DeserializerCache._handleUnknownKeyDeserializer(DeserializerCache.java:602)
+	at com.fasterxml.jackson.databind.deser.DeserializerCache.findKeyDeserializer(DeserializerCache.java:168)
+	at com.fasterxml.jackson.databind.DeserializationContext.findKeyDeserializer(DeserializationContext.java:514)
+	at com.fasterxml.jackson.databind.deser.std.MapDeserializer.createContextual(MapDeserializer.java:248)
+	at com.fasterxml.jackson.databind.DeserializationContext.handlePrimaryContextualization(DeserializationContext.java:665)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializerBase.resolve(BeanDeserializerBase.java:496)
+	at com.fasterxml.jackson.databind.deser.DeserializerCache._createAndCache2(DeserializerCache.java:293)
+	at com.fasterxml.jackson.databind.deser.DeserializerCache._createAndCacheValueDeserializer(DeserializerCache.java:244)
+	at com.fasterxml.jackson.databind.deser.DeserializerCache.findValueDeserializer(DeserializerCache.java:142)
+	at com.fasterxml.jackson.databind.DeserializationContext.findContextualValueDeserializer(DeserializationContext.java:458)
+	at com.fasterxml.jackson.databind.deser.std.CollectionDeserializer.createContextual(CollectionDeserializer.java:182)
+	at com.fasterxml.jackson.databind.deser.std.CollectionDeserializer.createContextual(CollectionDeserializer.java:27)
+	at com.fasterxml.jackson.databind.DeserializationContext.handleSecondaryContextualization(DeserializationContext.java:696)
+	at com.fasterxml.jackson.databind.DeserializationContext.findRootValueDeserializer(DeserializationContext.java:496)
+	at com.fasterxml.jackson.databind.ObjectMapper._findRootDeserializer(ObjectMapper.java:4669)
+	at com.fasterxml.jackson.databind.ObjectMapper._readMapAndClose(ObjectMapper.java:4478)
+	at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:3479)
+	at com.bridz.clinique_management.service.CliniqueImplementation.addPatient(CliniqueImplementation.java:189)
+	at com.bridz.clinique_management.service.CliniqueImplementation.patient(CliniqueImplementation.java:132)
+	at com.bridz.clinique_management.controller.CliniqueController.DisplayUserMenu(CliniqueController.java:31)
+	at com.bridz.clinique_management.controller.CliniqueController.DisplayUserMenu(CliniqueController.java:25)
+	at com.bridz.clinique_management.service.CliniqueImplementation.patient(CliniqueImplementation.java:136)
+	at com.bridz.clinique_management.controller.CliniqueController.DisplayUserMenu(CliniqueController.java:31)
+	at com.bridz.clinique_management.CliniqueManagementApplication.main(CliniqueManagementApplication.java:15)
+2020-06-04 10:23:58,781  INFO [main] - com.bridz.clinique_management.CliniqueManagementApplication.main 13 - Main method called
+2020-06-04 10:43:42,424  INFO [main] - com.bridz.clinique_management.CliniqueManagementApplication.main 13 - Main method called
+2020-06-04 10:45:12,426  INFO [main] - com.bridz.clinique_management.service.CliniqueImplementation.addPatient 203 - com.fasterxml.jackson.databind.exc.InvalidDefinitionException: Cannot find a (Map) Key deserializer for type [simple type, class java.time.LocalDate]
+ at [Source: (FileInputStream); line: 1, column: 1]
+com.fasterxml.jackson.databind.exc.InvalidDefinitionException: Cannot find a (Map) Key deserializer for type [simple type, class java.time.LocalDate]
+ at [Source: (FileInputStream); line: 1, column: 1]
+	at com.fasterxml.jackson.databind.exc.InvalidDefinitionException.from(InvalidDefinitionException.java:67)
+	at com.fasterxml.jackson.databind.DeserializationContext.reportBadDefinition(DeserializationContext.java:1611)
+	at com.fasterxml.jackson.databind.deser.DeserializerCache._handleUnknownKeyDeserializer(DeserializerCache.java:602)
+	at com.fasterxml.jackson.databind.deser.DeserializerCache.findKeyDeserializer(DeserializerCache.java:168)
+	at com.fasterxml.jackson.databind.DeserializationContext.findKeyDeserializer(DeserializationContext.java:514)
+	at com.fasterxml.jackson.databind.deser.std.MapDeserializer.createContextual(MapDeserializer.java:248)
+	at com.fasterxml.jackson.databind.DeserializationContext.handlePrimaryContextualization(DeserializationContext.java:665)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializerBase.resolve(BeanDeserializerBase.java:496)
+	at com.fasterxml.jackson.databind.deser.DeserializerCache._createAndCache2(DeserializerCache.java:293)
+	at com.fasterxml.jackson.databind.deser.DeserializerCache._createAndCacheValueDeserializer(DeserializerCache.java:244)
+	at com.fasterxml.jackson.databind.deser.DeserializerCache.findValueDeserializer(DeserializerCache.java:142)
+	at com.fasterxml.jackson.databind.DeserializationContext.findContextualValueDeserializer(DeserializationContext.java:458)
+	at com.fasterxml.jackson.databind.deser.std.CollectionDeserializer.createContextual(CollectionDeserializer.java:182)
+	at com.fasterxml.jackson.databind.deser.std.CollectionDeserializer.createContextual(CollectionDeserializer.java:27)
+	at com.fasterxml.jackson.databind.DeserializationContext.handleSecondaryContextualization(DeserializationContext.java:696)
+	at com.fasterxml.jackson.databind.DeserializationContext.findRootValueDeserializer(DeserializationContext.java:496)
+	at com.fasterxml.jackson.databind.ObjectMapper._findRootDeserializer(ObjectMapper.java:4669)
+	at com.fasterxml.jackson.databind.ObjectMapper._readMapAndClose(ObjectMapper.java:4478)
+	at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:3479)
+	at com.bridz.clinique_management.service.CliniqueImplementation.addPatient(CliniqueImplementation.java:188)
+	at com.bridz.clinique_management.service.CliniqueImplementation.patient(CliniqueImplementation.java:131)
+	at com.bridz.clinique_management.controller.CliniqueController.DisplayUserMenu(CliniqueController.java:31)
+	at com.bridz.clinique_management.controller.CliniqueController.DisplayUserMenu(CliniqueController.java:25)
+	at com.bridz.clinique_management.CliniqueManagementApplication.main(CliniqueManagementApplication.java:15)
+2020-06-04 10:56:36,749  INFO [main] - com.bridz.clinique_management.CliniqueManagementApplication.main 13 - Main method called
+2020-06-04 10:56:59,837  INFO [main] - com.bridz.clinique_management.service.CliniqueImplementation.addPatient 209 - com.fasterxml.jackson.databind.exc.InvalidDefinitionException: Cannot find a (Map) Key deserializer for type [simple type, class java.time.LocalDate]
+ at [Source: (FileInputStream); line: 1, column: 1]
+com.fasterxml.jackson.databind.exc.InvalidDefinitionException: Cannot find a (Map) Key deserializer for type [simple type, class java.time.LocalDate]
+ at [Source: (FileInputStream); line: 1, column: 1]
+	at com.fasterxml.jackson.databind.exc.InvalidDefinitionException.from(InvalidDefinitionException.java:67)
+	at com.fasterxml.jackson.databind.DeserializationContext.reportBadDefinition(DeserializationContext.java:1611)
+	at com.fasterxml.jackson.databind.deser.DeserializerCache._handleUnknownKeyDeserializer(DeserializerCache.java:602)
+	at com.fasterxml.jackson.databind.deser.DeserializerCache.findKeyDeserializer(DeserializerCache.java:168)
+	at com.fasterxml.jackson.databind.DeserializationContext.findKeyDeserializer(DeserializationContext.java:514)
+	at com.fasterxml.jackson.databind.deser.std.MapDeserializer.createContextual(MapDeserializer.java:248)
+	at com.fasterxml.jackson.databind.DeserializationContext.handlePrimaryContextualization(DeserializationContext.java:665)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializerBase.resolve(BeanDeserializerBase.java:496)
+	at com.fasterxml.jackson.databind.deser.DeserializerCache._createAndCache2(DeserializerCache.java:293)
+	at com.fasterxml.jackson.databind.deser.DeserializerCache._createAndCacheValueDeserializer(DeserializerCache.java:244)
+	at com.fasterxml.jackson.databind.deser.DeserializerCache.findValueDeserializer(DeserializerCache.java:142)
+	at com.fasterxml.jackson.databind.DeserializationContext.findContextualValueDeserializer(DeserializationContext.java:458)
+	at com.fasterxml.jackson.databind.deser.std.CollectionDeserializer.createContextual(CollectionDeserializer.java:182)
+	at com.fasterxml.jackson.databind.deser.std.CollectionDeserializer.createContextual(CollectionDeserializer.java:27)
+	at com.fasterxml.jackson.databind.DeserializationContext.handleSecondaryContextualization(DeserializationContext.java:696)
+	at com.fasterxml.jackson.databind.DeserializationContext.findRootValueDeserializer(DeserializationContext.java:496)
+	at com.fasterxml.jackson.databind.ObjectMapper._findRootDeserializer(ObjectMapper.java:4669)
+	at com.fasterxml.jackson.databind.ObjectMapper._readMapAndClose(ObjectMapper.java:4478)
+	at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:3479)
+	at com.bridz.clinique_management.service.CliniqueImplementation.addPatient(CliniqueImplementation.java:194)
+	at com.bridz.clinique_management.service.CliniqueImplementation.patient(CliniqueImplementation.java:131)
+	at com.bridz.clinique_management.controller.CliniqueController.DisplayUserMenu(CliniqueController.java:31)
+	at com.bridz.clinique_management.CliniqueManagementApplication.main(CliniqueManagementApplication.java:15)
+2020-06-04 11:02:15,184  INFO [main] - com.bridz.clinique_management.CliniqueManagementApplication.main 13 - Main method called
+2020-06-04 11:03:01,714  INFO [main] - com.bridz.clinique_management.service.CliniqueImplementation.addPatient 212 - java.io.StreamCorruptedException: invalid stream header: 5B7B2269
+java.io.StreamCorruptedException: invalid stream header: 5B7B2269
+	at java.io.ObjectInputStream.readStreamHeader(Unknown Source)
+	at java.io.ObjectInputStream.<init>(Unknown Source)
+	at com.bridz.clinique_management.service.CliniqueImplementation.addPatient(CliniqueImplementation.java:192)
+	at com.bridz.clinique_management.service.CliniqueImplementation.patient(CliniqueImplementation.java:132)
+	at com.bridz.clinique_management.controller.CliniqueController.DisplayUserMenu(CliniqueController.java:31)
+	at com.bridz.clinique_management.controller.CliniqueController.DisplayUserMenu(CliniqueController.java:25)
+	at com.bridz.clinique_management.CliniqueManagementApplication.main(CliniqueManagementApplication.java:15)
+2020-06-04 11:31:39,184  INFO [main] - com.bridz.clinique_management.CliniqueManagementApplication.main 13 - Main method called
+2020-06-04 11:33:13,543  INFO [main] - com.bridz.clinique_management.CliniqueManagementApplication.main 13 - Main method called
+2020-06-04 11:40:17,622  INFO [main] - com.bridz.clinique_management.CliniqueManagementApplication.main 13 - Main method called
+2020-06-04 11:51:40,825  INFO [main] - com.bridz.clinique_management.CliniqueManagementApplication.main 13 - Main method called
+2020-06-04 11:54:39,472  INFO [main] - com.bridz.clinique_management.CliniqueManagementApplication.main 13 - Main method called
+2020-06-04 11:54:55,186  INFO [main] - com.bridz.clinique_management.CliniqueManagementApplication.main 13 - Main method called
+2020-06-04 11:58:08,986  INFO [main] - com.bridz.clinique_management.CliniqueManagementApplication.main 13 - Main method called
+2020-06-04 12:00:05,886  INFO [main] - com.bridz.clinique_management.CliniqueManagementApplication.main 13 - Main method called
+2020-06-04 12:04:36,703  INFO [main] - com.bridz.clinique_management.CliniqueManagementApplication.main 13 - Main method called
+2020-06-04 12:08:17,218  INFO [main] - com.bridz.clinique_management.CliniqueManagementApplication.main 13 - Main method called
+2020-06-04 12:09:25,771  INFO [main] - com.bridz.clinique_management.CliniqueManagementApplication.main 13 - Main method called
+2020-06-04 12:10:20,159  INFO [main] - com.bridz.clinique_management.service.CliniqueImplementation.addPatient 210 - com.fasterxml.jackson.databind.exc.InvalidDefinitionException: Cannot find a (Map) Key deserializer for type [simple type, class java.time.LocalDate]
+ at [Source: (FileInputStream); line: 1, column: 1]
+com.fasterxml.jackson.databind.exc.InvalidDefinitionException: Cannot find a (Map) Key deserializer for type [simple type, class java.time.LocalDate]
+ at [Source: (FileInputStream); line: 1, column: 1]
+	at com.fasterxml.jackson.databind.exc.InvalidDefinitionException.from(InvalidDefinitionException.java:67)
+	at com.fasterxml.jackson.databind.DeserializationContext.reportBadDefinition(DeserializationContext.java:1611)
+	at com.fasterxml.jackson.databind.deser.DeserializerCache._handleUnknownKeyDeserializer(DeserializerCache.java:602)
+	at com.fasterxml.jackson.databind.deser.DeserializerCache.findKeyDeserializer(DeserializerCache.java:168)
+	at com.fasterxml.jackson.databind.DeserializationContext.findKeyDeserializer(DeserializationContext.java:514)
+	at com.fasterxml.jackson.databind.deser.std.MapDeserializer.createContextual(MapDeserializer.java:248)
+	at com.fasterxml.jackson.databind.DeserializationContext.handlePrimaryContextualization(DeserializationContext.java:665)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializerBase.resolve(BeanDeserializerBase.java:496)
+	at com.fasterxml.jackson.databind.deser.DeserializerCache._createAndCache2(DeserializerCache.java:293)
+	at com.fasterxml.jackson.databind.deser.DeserializerCache._createAndCacheValueDeserializer(DeserializerCache.java:244)
+	at com.fasterxml.jackson.databind.deser.DeserializerCache.findValueDeserializer(DeserializerCache.java:142)
+	at com.fasterxml.jackson.databind.DeserializationContext.findContextualValueDeserializer(DeserializationContext.java:458)
+	at com.fasterxml.jackson.databind.deser.std.CollectionDeserializer.createContextual(CollectionDeserializer.java:182)
+	at com.fasterxml.jackson.databind.deser.std.CollectionDeserializer.createContextual(CollectionDeserializer.java:27)
+	at com.fasterxml.jackson.databind.DeserializationContext.handleSecondaryContextualization(DeserializationContext.java:696)
+	at com.fasterxml.jackson.databind.DeserializationContext.findRootValueDeserializer(DeserializationContext.java:496)
+	at com.fasterxml.jackson.databind.ObjectMapper._findRootDeserializer(ObjectMapper.java:4669)
+	at com.fasterxml.jackson.databind.ObjectMapper._readMapAndClose(ObjectMapper.java:4478)
+	at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:3479)
+	at com.bridz.clinique_management.service.CliniqueImplementation.addPatient(CliniqueImplementation.java:195)
+	at com.bridz.clinique_management.service.CliniqueImplementation.patient(CliniqueImplementation.java:133)
+	at com.bridz.clinique_management.controller.CliniqueController.DisplayUserMenu(CliniqueController.java:31)
+	at com.bridz.clinique_management.CliniqueManagementApplication.main(CliniqueManagementApplication.java:15)
+2020-06-04 12:11:44,244  INFO [main] - com.bridz.clinique_management.CliniqueManagementApplication.main 13 - Main method called
+2020-06-04 12:12:44,457  INFO [main] - com.bridz.clinique_management.CliniqueManagementApplication.main 13 - Main method called
+2020-06-04 12:14:13,251  INFO [main] - com.bridz.clinique_management.CliniqueManagementApplication.main 13 - Main method called
+2020-06-04 12:17:55,772  INFO [main] - com.bridz.clinique_management.CliniqueManagementApplication.main 13 - Main method called
+2020-06-04 12:21:17,256  INFO [main] - com.bridz.clinique_management.CliniqueManagementApplication.main 13 - Main method called
+2020-06-04 12:32:15,154  INFO [main] - com.bridz.clinique_management.CliniqueManagementApplication.main 13 - Main method called
+2020-06-04 12:37:17,106  INFO [main] - com.bridz.clinique_management.CliniqueManagementApplication.main 13 - Main method called
+2020-06-04 12:38:40,497  INFO [main] - com.bridz.clinique_management.CliniqueManagementApplication.main 13 - Main method called
+2020-06-04 12:39:19,453  INFO [main] - com.bridz.clinique_management.CliniqueManagementApplication.main 13 - Main method called
+2020-06-04 12:39:31,480  INFO [main] - com.bridz.clinique_management.CliniqueManagementApplication.main 13 - Main method called
+2020-06-04 12:40:31,131  INFO [main] - com.bridz.clinique_management.service.CliniqueImplementation.addPatient 211 - com.fasterxml.jackson.databind.exc.InvalidDefinitionException: Cannot find a (Map) Key deserializer for type [simple type, class java.time.LocalDate]
+ at [Source: (FileInputStream); line: 1, column: 1]
+com.fasterxml.jackson.databind.exc.InvalidDefinitionException: Cannot find a (Map) Key deserializer for type [simple type, class java.time.LocalDate]
+ at [Source: (FileInputStream); line: 1, column: 1]
+	at com.fasterxml.jackson.databind.exc.InvalidDefinitionException.from(InvalidDefinitionException.java:67)
+	at com.fasterxml.jackson.databind.DeserializationContext.reportBadDefinition(DeserializationContext.java:1611)
+	at com.fasterxml.jackson.databind.deser.DeserializerCache._handleUnknownKeyDeserializer(DeserializerCache.java:602)
+	at com.fasterxml.jackson.databind.deser.DeserializerCache.findKeyDeserializer(DeserializerCache.java:168)
+	at com.fasterxml.jackson.databind.DeserializationContext.findKeyDeserializer(DeserializationContext.java:514)
+	at com.fasterxml.jackson.databind.deser.std.MapDeserializer.createContextual(MapDeserializer.java:248)
+	at com.fasterxml.jackson.databind.DeserializationContext.handlePrimaryContextualization(DeserializationContext.java:665)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializerBase.resolve(BeanDeserializerBase.java:496)
+	at com.fasterxml.jackson.databind.deser.DeserializerCache._createAndCache2(DeserializerCache.java:293)
+	at com.fasterxml.jackson.databind.deser.DeserializerCache._createAndCacheValueDeserializer(DeserializerCache.java:244)
+	at com.fasterxml.jackson.databind.deser.DeserializerCache.findValueDeserializer(DeserializerCache.java:142)
+	at com.fasterxml.jackson.databind.DeserializationContext.findContextualValueDeserializer(DeserializationContext.java:458)
+	at com.fasterxml.jackson.databind.deser.std.CollectionDeserializer.createContextual(CollectionDeserializer.java:182)
+	at com.fasterxml.jackson.databind.deser.std.CollectionDeserializer.createContextual(CollectionDeserializer.java:27)
+	at com.fasterxml.jackson.databind.DeserializationContext.handleSecondaryContextualization(DeserializationContext.java:696)
+	at com.fasterxml.jackson.databind.DeserializationContext.findRootValueDeserializer(DeserializationContext.java:496)
+	at com.fasterxml.jackson.databind.ObjectMapper._findRootDeserializer(ObjectMapper.java:4669)
+	at com.fasterxml.jackson.databind.ObjectMapper._readMapAndClose(ObjectMapper.java:4478)
+	at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:3479)
+	at com.bridz.clinique_management.service.CliniqueImplementation.addPatient(CliniqueImplementation.java:196)
+	at com.bridz.clinique_management.service.CliniqueImplementation.patient(CliniqueImplementation.java:132)
+	at com.bridz.clinique_management.controller.CliniqueController.DisplayUserMenu(CliniqueController.java:31)
+	at com.bridz.clinique_management.controller.CliniqueController.DisplayUserMenu(CliniqueController.java:25)
+	at com.bridz.clinique_management.controller.CliniqueController.DisplayUserMenu(CliniqueController.java:25)
+	at com.bridz.clinique_management.CliniqueManagementApplication.main(CliniqueManagementApplication.java:15)
+2020-06-04 12:41:49,783  INFO [main] - com.bridz.clinique_management.CliniqueManagementApplication.main 13 - Main method called
+2020-06-04 12:55:43,255  INFO [main] - com.bridz.clinique_management.CliniqueManagementApplication.main 13 - Main method called
+2020-06-04 13:10:37,282  INFO [main] - com.bridz.clinique_management.CliniqueManagementApplication.main 13 - Main method called
+2020-06-04 13:10:57,396  INFO [main] - com.bridz.clinique_management.CliniqueManagementApplication.main 13 - Main method called
+2020-06-04 14:06:52,694  INFO [main] - com.bridz.clinique_management.CliniqueManagementApplication.main 13 - Main method called
+2020-06-04 14:08:12,635  INFO [main] - com.bridz.clinique_management.CliniqueManagementApplication.main 13 - Main method called
+2020-06-04 14:08:28,475  INFO [main] - com.bridz.clinique_management.CliniqueManagementApplication.main 13 - Main method called
+2020-06-04 14:09:03,853  INFO [main] - com.bridz.clinique_management.service.CliniqueImplementation.addPatient 225 - com.fasterxml.jackson.databind.exc.InvalidDefinitionException: Cannot find a (Map) Key deserializer for type [simple type, class java.time.LocalDate]
+ at [Source: (FileInputStream); line: 1, column: 1]
+com.fasterxml.jackson.databind.exc.InvalidDefinitionException: Cannot find a (Map) Key deserializer for type [simple type, class java.time.LocalDate]
+ at [Source: (FileInputStream); line: 1, column: 1]
+	at com.fasterxml.jackson.databind.exc.InvalidDefinitionException.from(InvalidDefinitionException.java:67)
+	at com.fasterxml.jackson.databind.DeserializationContext.reportBadDefinition(DeserializationContext.java:1611)
+	at com.fasterxml.jackson.databind.deser.DeserializerCache._handleUnknownKeyDeserializer(DeserializerCache.java:602)
+	at com.fasterxml.jackson.databind.deser.DeserializerCache.findKeyDeserializer(DeserializerCache.java:168)
+	at com.fasterxml.jackson.databind.DeserializationContext.findKeyDeserializer(DeserializationContext.java:514)
+	at com.fasterxml.jackson.databind.deser.std.MapDeserializer.createContextual(MapDeserializer.java:248)
+	at com.fasterxml.jackson.databind.DeserializationContext.handlePrimaryContextualization(DeserializationContext.java:665)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializerBase.resolve(BeanDeserializerBase.java:496)
+	at com.fasterxml.jackson.databind.deser.DeserializerCache._createAndCache2(DeserializerCache.java:293)
+	at com.fasterxml.jackson.databind.deser.DeserializerCache._createAndCacheValueDeserializer(DeserializerCache.java:244)
+	at com.fasterxml.jackson.databind.deser.DeserializerCache.findValueDeserializer(DeserializerCache.java:142)
+	at com.fasterxml.jackson.databind.DeserializationContext.findContextualValueDeserializer(DeserializationContext.java:458)
+	at com.fasterxml.jackson.databind.deser.std.CollectionDeserializer.createContextual(CollectionDeserializer.java:182)
+	at com.fasterxml.jackson.databind.deser.std.CollectionDeserializer.createContextual(CollectionDeserializer.java:27)
+	at com.fasterxml.jackson.databind.DeserializationContext.handleSecondaryContextualization(DeserializationContext.java:696)
+	at com.fasterxml.jackson.databind.DeserializationContext.findRootValueDeserializer(DeserializationContext.java:496)
+	at com.fasterxml.jackson.databind.ObjectMapper._findRootDeserializer(ObjectMapper.java:4669)
+	at com.fasterxml.jackson.databind.ObjectMapper._readMapAndClose(ObjectMapper.java:4478)
+	at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:3479)
+	at com.bridz.clinique_management.service.CliniqueImplementation.addPatient(CliniqueImplementation.java:210)
+	at com.bridz.clinique_management.service.CliniqueImplementation.patient(CliniqueImplementation.java:140)
+	at com.bridz.clinique_management.controller.CliniqueController.DisplayUserMenu(CliniqueController.java:31)
+	at com.bridz.clinique_management.service.CliniqueImplementation.doctor(CliniqueImplementation.java:63)
+	at com.bridz.clinique_management.controller.CliniqueController.DisplayUserMenu(CliniqueController.java:24)
+	at com.bridz.clinique_management.controller.CliniqueController.DisplayUserMenu(CliniqueController.java:25)
+	at com.bridz.clinique_management.CliniqueManagementApplication.main(CliniqueManagementApplication.java:15)
+2020-06-04 14:15:46,512  INFO [main] - com.bridz.clinique_management.CliniqueManagementApplication.main 13 - Main method called
+2020-06-04 14:16:30,124  INFO [main] - com.bridz.clinique_management.CliniqueManagementApplication.main 13 - Main method called
+2020-06-04 14:23:23,024  INFO [main] - com.bridz.clinique_management.CliniqueManagementApplication.main 13 - Main method called
+2020-06-04 14:43:48,514  INFO [main] - com.bridz.clinique_management.CliniqueManagementApplication.main 13 - Main method called
+2020-06-04 14:44:46,604  INFO [main] - com.bridz.clinique_management.service.CliniqueImplementation.addPatient 210 - com.fasterxml.jackson.databind.exc.InvalidDefinitionException: Cannot find a (Map) Key deserializer for type [simple type, class java.time.LocalDate]
+ at [Source: (FileInputStream); line: 1, column: 1]
+com.fasterxml.jackson.databind.exc.InvalidDefinitionException: Cannot find a (Map) Key deserializer for type [simple type, class java.time.LocalDate]
+ at [Source: (FileInputStream); line: 1, column: 1]
+	at com.fasterxml.jackson.databind.exc.InvalidDefinitionException.from(InvalidDefinitionException.java:67)
+	at com.fasterxml.jackson.databind.DeserializationContext.reportBadDefinition(DeserializationContext.java:1611)
+	at com.fasterxml.jackson.databind.deser.DeserializerCache._handleUnknownKeyDeserializer(DeserializerCache.java:602)
+	at com.fasterxml.jackson.databind.deser.DeserializerCache.findKeyDeserializer(DeserializerCache.java:168)
+	at com.fasterxml.jackson.databind.DeserializationContext.findKeyDeserializer(DeserializationContext.java:514)
+	at com.fasterxml.jackson.databind.deser.std.MapDeserializer.createContextual(MapDeserializer.java:248)
+	at com.fasterxml.jackson.databind.DeserializationContext.handlePrimaryContextualization(DeserializationContext.java:665)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializerBase.resolve(BeanDeserializerBase.java:496)
+	at com.fasterxml.jackson.databind.deser.DeserializerCache._createAndCache2(DeserializerCache.java:293)
+	at com.fasterxml.jackson.databind.deser.DeserializerCache._createAndCacheValueDeserializer(DeserializerCache.java:244)
+	at com.fasterxml.jackson.databind.deser.DeserializerCache.findValueDeserializer(DeserializerCache.java:142)
+	at com.fasterxml.jackson.databind.DeserializationContext.findContextualValueDeserializer(DeserializationContext.java:458)
+	at com.fasterxml.jackson.databind.deser.std.CollectionDeserializer.createContextual(CollectionDeserializer.java:182)
+	at com.fasterxml.jackson.databind.deser.std.CollectionDeserializer.createContextual(CollectionDeserializer.java:27)
+	at com.fasterxml.jackson.databind.DeserializationContext.handleSecondaryContextualization(DeserializationContext.java:696)
+	at com.fasterxml.jackson.databind.DeserializationContext.findRootValueDeserializer(DeserializationContext.java:496)
+	at com.fasterxml.jackson.databind.ObjectMapper._findRootDeserializer(ObjectMapper.java:4669)
+	at com.fasterxml.jackson.databind.ObjectMapper._readMapAndClose(ObjectMapper.java:4478)
+	at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:3479)
+	at com.bridz.clinique_management.service.CliniqueImplementation.addPatient(CliniqueImplementation.java:195)
+	at com.bridz.clinique_management.service.CliniqueImplementation.patient(CliniqueImplementation.java:132)
+	at com.bridz.clinique_management.controller.CliniqueController.DisplayUserMenu(CliniqueController.java:31)
+	at com.bridz.clinique_management.controller.CliniqueController.DisplayUserMenu(CliniqueController.java:25)
+	at com.bridz.clinique_management.controller.CliniqueController.DisplayUserMenu(CliniqueController.java:25)
+	at com.bridz.clinique_management.CliniqueManagementApplication.main(CliniqueManagementApplication.java:15)
+2020-06-04 17:07:18,227  INFO [main] - com.bridz.clinique_management.CliniqueManagementApplication.main 13 - Main method called
+2020-06-04 17:07:52,798  INFO [main] - com.bridz.clinique_management.CliniqueManagementApplication.main 13 - Main method called
+2020-06-04 17:09:02,918  INFO [main] - com.bridz.clinique_management.service.CliniqueImplementation.addPatient 212 - com.fasterxml.jackson.databind.exc.InvalidDefinitionException: Cannot find a (Map) Key deserializer for type [simple type, class java.time.LocalDate]
+ at [Source: (FileInputStream); line: 1, column: 1]
+com.fasterxml.jackson.databind.exc.InvalidDefinitionException: Cannot find a (Map) Key deserializer for type [simple type, class java.time.LocalDate]
+ at [Source: (FileInputStream); line: 1, column: 1]
+	at com.fasterxml.jackson.databind.exc.InvalidDefinitionException.from(InvalidDefinitionException.java:67)
+	at com.fasterxml.jackson.databind.DeserializationContext.reportBadDefinition(DeserializationContext.java:1611)
+	at com.fasterxml.jackson.databind.deser.DeserializerCache._handleUnknownKeyDeserializer(DeserializerCache.java:602)
+	at com.fasterxml.jackson.databind.deser.DeserializerCache.findKeyDeserializer(DeserializerCache.java:168)
+	at com.fasterxml.jackson.databind.DeserializationContext.findKeyDeserializer(DeserializationContext.java:514)
+	at com.fasterxml.jackson.databind.deser.std.MapDeserializer.createContextual(MapDeserializer.java:248)
+	at com.fasterxml.jackson.databind.DeserializationContext.handlePrimaryContextualization(DeserializationContext.java:665)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializerBase.resolve(BeanDeserializerBase.java:496)
+	at com.fasterxml.jackson.databind.deser.DeserializerCache._createAndCache2(DeserializerCache.java:293)
+	at com.fasterxml.jackson.databind.deser.DeserializerCache._createAndCacheValueDeserializer(DeserializerCache.java:244)
+	at com.fasterxml.jackson.databind.deser.DeserializerCache.findValueDeserializer(DeserializerCache.java:142)
+	at com.fasterxml.jackson.databind.DeserializationContext.findContextualValueDeserializer(DeserializationContext.java:458)
+	at com.fasterxml.jackson.databind.deser.std.CollectionDeserializer.createContextual(CollectionDeserializer.java:182)
+	at com.fasterxml.jackson.databind.deser.std.CollectionDeserializer.createContextual(CollectionDeserializer.java:27)
+	at com.fasterxml.jackson.databind.DeserializationContext.handleSecondaryContextualization(DeserializationContext.java:696)
+	at com.fasterxml.jackson.databind.DeserializationContext.findRootValueDeserializer(DeserializationContext.java:496)
+	at com.fasterxml.jackson.databind.ObjectMapper._findRootDeserializer(ObjectMapper.java:4669)
+	at com.fasterxml.jackson.databind.ObjectMapper._readMapAndClose(ObjectMapper.java:4478)
+	at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:3479)
+	at com.bridz.clinique_management.service.CliniqueImplementation.addPatient(CliniqueImplementation.java:197)
+	at com.bridz.clinique_management.service.CliniqueImplementation.patient(CliniqueImplementation.java:133)
+	at com.bridz.clinique_management.controller.CliniqueController.DisplayUserMenu(CliniqueController.java:31)
+	at com.bridz.clinique_management.controller.CliniqueController.DisplayUserMenu(CliniqueController.java:25)
+	at com.bridz.clinique_management.controller.CliniqueController.DisplayUserMenu(CliniqueController.java:32)
+	at com.bridz.clinique_management.controller.CliniqueController.DisplayUserMenu(CliniqueController.java:25)
+	at com.bridz.clinique_management.CliniqueManagementApplication.main(CliniqueManagementApplication.java:15)
+2020-06-04 17:25:48,309  INFO [main] - com.bridz.clinique_management.CliniqueManagementApplication.main 13 - Main method called
+2020-06-04 17:26:15,086  INFO [main] - com.bridz.clinique_management.service.CliniqueImplementation.addPatient 212 - com.fasterxml.jackson.databind.exc.InvalidDefinitionException: Cannot find a (Map) Key deserializer for type [simple type, class java.time.LocalDate]
+ at [Source: (FileInputStream); line: 1, column: 1]
+com.fasterxml.jackson.databind.exc.InvalidDefinitionException: Cannot find a (Map) Key deserializer for type [simple type, class java.time.LocalDate]
+ at [Source: (FileInputStream); line: 1, column: 1]
+	at com.fasterxml.jackson.databind.exc.InvalidDefinitionException.from(InvalidDefinitionException.java:67)
+	at com.fasterxml.jackson.databind.DeserializationContext.reportBadDefinition(DeserializationContext.java:1611)
+	at com.fasterxml.jackson.databind.deser.DeserializerCache._handleUnknownKeyDeserializer(DeserializerCache.java:602)
+	at com.fasterxml.jackson.databind.deser.DeserializerCache.findKeyDeserializer(DeserializerCache.java:168)
+	at com.fasterxml.jackson.databind.DeserializationContext.findKeyDeserializer(DeserializationContext.java:514)
+	at com.fasterxml.jackson.databind.deser.std.MapDeserializer.createContextual(MapDeserializer.java:248)
+	at com.fasterxml.jackson.databind.DeserializationContext.handlePrimaryContextualization(DeserializationContext.java:665)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializerBase.resolve(BeanDeserializerBase.java:496)
+	at com.fasterxml.jackson.databind.deser.DeserializerCache._createAndCache2(DeserializerCache.java:293)
+	at com.fasterxml.jackson.databind.deser.DeserializerCache._createAndCacheValueDeserializer(DeserializerCache.java:244)
+	at com.fasterxml.jackson.databind.deser.DeserializerCache.findValueDeserializer(DeserializerCache.java:142)
+	at com.fasterxml.jackson.databind.DeserializationContext.findContextualValueDeserializer(DeserializationContext.java:458)
+	at com.fasterxml.jackson.databind.deser.std.CollectionDeserializer.createContextual(CollectionDeserializer.java:182)
+	at com.fasterxml.jackson.databind.deser.std.CollectionDeserializer.createContextual(CollectionDeserializer.java:27)
+	at com.fasterxml.jackson.databind.DeserializationContext.handleSecondaryContextualization(DeserializationContext.java:696)
+	at com.fasterxml.jackson.databind.DeserializationContext.findRootValueDeserializer(DeserializationContext.java:496)
+	at com.fasterxml.jackson.databind.ObjectMapper._findRootDeserializer(ObjectMapper.java:4669)
+	at com.fasterxml.jackson.databind.ObjectMapper._readMapAndClose(ObjectMapper.java:4478)
+	at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:3479)
+	at com.bridz.clinique_management.service.CliniqueImplementation.addPatient(CliniqueImplementation.java:197)
+	at com.bridz.clinique_management.service.CliniqueImplementation.patient(CliniqueImplementation.java:133)
+	at com.bridz.clinique_management.controller.CliniqueController.DisplayUserMenu(CliniqueController.java:31)
+	at com.bridz.clinique_management.CliniqueManagementApplication.main(CliniqueManagementApplication.java:15)
+2020-06-04 17:29:03,805  INFO [main] - com.bridz.clinique_management.CliniqueManagementApplication.main 13 - Main method called
+2020-06-04 17:29:37,379  INFO [main] - com.bridz.clinique_management.service.CliniqueImplementation.addPatient 212 - com.fasterxml.jackson.databind.exc.InvalidDefinitionException: Cannot find a (Map) Key deserializer for type [simple type, class java.time.LocalDate]
+ at [Source: (File); line: 1, column: 1]
+com.fasterxml.jackson.databind.exc.InvalidDefinitionException: Cannot find a (Map) Key deserializer for type [simple type, class java.time.LocalDate]
+ at [Source: (File); line: 1, column: 1]
+	at com.fasterxml.jackson.databind.exc.InvalidDefinitionException.from(InvalidDefinitionException.java:67)
+	at com.fasterxml.jackson.databind.DeserializationContext.reportBadDefinition(DeserializationContext.java:1611)
+	at com.fasterxml.jackson.databind.deser.DeserializerCache._handleUnknownKeyDeserializer(DeserializerCache.java:602)
+	at com.fasterxml.jackson.databind.deser.DeserializerCache.findKeyDeserializer(DeserializerCache.java:168)
+	at com.fasterxml.jackson.databind.DeserializationContext.findKeyDeserializer(DeserializationContext.java:514)
+	at com.fasterxml.jackson.databind.deser.std.MapDeserializer.createContextual(MapDeserializer.java:248)
+	at com.fasterxml.jackson.databind.DeserializationContext.handlePrimaryContextualization(DeserializationContext.java:665)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializerBase.resolve(BeanDeserializerBase.java:496)
+	at com.fasterxml.jackson.databind.deser.DeserializerCache._createAndCache2(DeserializerCache.java:293)
+	at com.fasterxml.jackson.databind.deser.DeserializerCache._createAndCacheValueDeserializer(DeserializerCache.java:244)
+	at com.fasterxml.jackson.databind.deser.DeserializerCache.findValueDeserializer(DeserializerCache.java:142)
+	at com.fasterxml.jackson.databind.DeserializationContext.findContextualValueDeserializer(DeserializationContext.java:458)
+	at com.fasterxml.jackson.databind.deser.std.CollectionDeserializer.createContextual(CollectionDeserializer.java:182)
+	at com.fasterxml.jackson.databind.deser.std.CollectionDeserializer.createContextual(CollectionDeserializer.java:27)
+	at com.fasterxml.jackson.databind.DeserializationContext.handleSecondaryContextualization(DeserializationContext.java:696)
+	at com.fasterxml.jackson.databind.DeserializationContext.findRootValueDeserializer(DeserializationContext.java:496)
+	at com.fasterxml.jackson.databind.ObjectMapper._findRootDeserializer(ObjectMapper.java:4669)
+	at com.fasterxml.jackson.databind.ObjectMapper._readMapAndClose(ObjectMapper.java:4478)
+	at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:3319)
+	at com.bridz.clinique_management.service.CliniqueImplementation.addPatient(CliniqueImplementation.java:197)
+	at com.bridz.clinique_management.service.CliniqueImplementation.patient(CliniqueImplementation.java:133)
+	at com.bridz.clinique_management.controller.CliniqueController.DisplayUserMenu(CliniqueController.java:31)
+	at com.bridz.clinique_management.controller.CliniqueController.DisplayUserMenu(CliniqueController.java:25)
+	at com.bridz.clinique_management.controller.CliniqueController.DisplayUserMenu(CliniqueController.java:32)
+	at com.bridz.clinique_management.CliniqueManagementApplication.main(CliniqueManagementApplication.java:15)
+2020-06-04 17:35:23,518  INFO [main] - com.bridz.clinique_management.CliniqueManagementApplication.main 13 - Main method called
+2020-06-04 17:35:44,694  INFO [main] - com.bridz.clinique_management.service.CliniqueImplementation.addPatient 212 - com.fasterxml.jackson.databind.exc.InvalidDefinitionException: Conflicting setter definitions for property "appointment": com.bridz.clinique_management.model.Doctor#setAppointment(1 params) vs com.bridz.clinique_management.model.Doctor#setAppointment(1 params)
+ at [Source: (File); line: 1, column: 1]
+com.fasterxml.jackson.databind.exc.InvalidDefinitionException: Conflicting setter definitions for property "appointment": com.bridz.clinique_management.model.Doctor#setAppointment(1 params) vs com.bridz.clinique_management.model.Doctor#setAppointment(1 params)
+ at [Source: (File); line: 1, column: 1]
+	at com.fasterxml.jackson.databind.exc.InvalidDefinitionException.from(InvalidDefinitionException.java:62)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializerFactory.buildBeanDeserializer(BeanDeserializerFactory.java:227)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializerFactory.createBeanDeserializer(BeanDeserializerFactory.java:143)
+	at com.fasterxml.jackson.databind.deser.DeserializerCache._createDeserializer2(DeserializerCache.java:414)
+	at com.fasterxml.jackson.databind.deser.DeserializerCache._createDeserializer(DeserializerCache.java:349)
+	at com.fasterxml.jackson.databind.deser.DeserializerCache._createAndCache2(DeserializerCache.java:264)
+	at com.fasterxml.jackson.databind.deser.DeserializerCache._createAndCacheValueDeserializer(DeserializerCache.java:244)
+	at com.fasterxml.jackson.databind.deser.DeserializerCache.findValueDeserializer(DeserializerCache.java:142)
+	at com.fasterxml.jackson.databind.DeserializationContext.findContextualValueDeserializer(DeserializationContext.java:458)
+	at com.fasterxml.jackson.databind.deser.std.CollectionDeserializer.createContextual(CollectionDeserializer.java:182)
+	at com.fasterxml.jackson.databind.deser.std.CollectionDeserializer.createContextual(CollectionDeserializer.java:27)
+	at com.fasterxml.jackson.databind.DeserializationContext.handleSecondaryContextualization(DeserializationContext.java:696)
+	at com.fasterxml.jackson.databind.DeserializationContext.findRootValueDeserializer(DeserializationContext.java:496)
+	at com.fasterxml.jackson.databind.ObjectMapper._findRootDeserializer(ObjectMapper.java:4669)
+	at com.fasterxml.jackson.databind.ObjectMapper._readMapAndClose(ObjectMapper.java:4478)
+	at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:3319)
+	at com.bridz.clinique_management.service.CliniqueImplementation.addPatient(CliniqueImplementation.java:197)
+	at com.bridz.clinique_management.service.CliniqueImplementation.patient(CliniqueImplementation.java:133)
+	at com.bridz.clinique_management.controller.CliniqueController.DisplayUserMenu(CliniqueController.java:31)
+	at com.bridz.clinique_management.service.CliniqueImplementation.doctor(CliniqueImplementation.java:62)
+	at com.bridz.clinique_management.controller.CliniqueController.DisplayUserMenu(CliniqueController.java:24)
+	at com.bridz.clinique_management.CliniqueManagementApplication.main(CliniqueManagementApplication.java:15)
+2020-06-04 17:40:17,168  INFO [main] - com.bridz.clinique_management.CliniqueManagementApplication.main 13 - Main method called
+2020-06-04 17:40:36,399  INFO [main] - com.bridz.clinique_management.service.CliniqueImplementation.addPatient 212 - com.fasterxml.jackson.databind.exc.InvalidDefinitionException: Cannot find a (Map) Key deserializer for type [simple type, class java.time.LocalDate]
+ at [Source: (File); line: 1, column: 1]
+com.fasterxml.jackson.databind.exc.InvalidDefinitionException: Cannot find a (Map) Key deserializer for type [simple type, class java.time.LocalDate]
+ at [Source: (File); line: 1, column: 1]
+	at com.fasterxml.jackson.databind.exc.InvalidDefinitionException.from(InvalidDefinitionException.java:67)
+	at com.fasterxml.jackson.databind.DeserializationContext.reportBadDefinition(DeserializationContext.java:1611)
+	at com.fasterxml.jackson.databind.deser.DeserializerCache._handleUnknownKeyDeserializer(DeserializerCache.java:602)
+	at com.fasterxml.jackson.databind.deser.DeserializerCache.findKeyDeserializer(DeserializerCache.java:168)
+	at com.fasterxml.jackson.databind.DeserializationContext.findKeyDeserializer(DeserializationContext.java:514)
+	at com.fasterxml.jackson.databind.deser.std.MapDeserializer.createContextual(MapDeserializer.java:248)
+	at com.fasterxml.jackson.databind.DeserializationContext.handlePrimaryContextualization(DeserializationContext.java:665)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializerBase.resolve(BeanDeserializerBase.java:496)
+	at com.fasterxml.jackson.databind.deser.DeserializerCache._createAndCache2(DeserializerCache.java:293)
+	at com.fasterxml.jackson.databind.deser.DeserializerCache._createAndCacheValueDeserializer(DeserializerCache.java:244)
+	at com.fasterxml.jackson.databind.deser.DeserializerCache.findValueDeserializer(DeserializerCache.java:142)
+	at com.fasterxml.jackson.databind.DeserializationContext.findContextualValueDeserializer(DeserializationContext.java:458)
+	at com.fasterxml.jackson.databind.deser.std.CollectionDeserializer.createContextual(CollectionDeserializer.java:182)
+	at com.fasterxml.jackson.databind.deser.std.CollectionDeserializer.createContextual(CollectionDeserializer.java:27)
+	at com.fasterxml.jackson.databind.DeserializationContext.handleSecondaryContextualization(DeserializationContext.java:696)
+	at com.fasterxml.jackson.databind.DeserializationContext.findRootValueDeserializer(DeserializationContext.java:496)
+	at com.fasterxml.jackson.databind.ObjectMapper._findRootDeserializer(ObjectMapper.java:4669)
+	at com.fasterxml.jackson.databind.ObjectMapper._readMapAndClose(ObjectMapper.java:4478)
+	at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:3319)
+	at com.bridz.clinique_management.service.CliniqueImplementation.addPatient(CliniqueImplementation.java:197)
+	at com.bridz.clinique_management.service.CliniqueImplementation.patient(CliniqueImplementation.java:133)
+	at com.bridz.clinique_management.controller.CliniqueController.DisplayUserMenu(CliniqueController.java:31)
+	at com.bridz.clinique_management.CliniqueManagementApplication.main(CliniqueManagementApplication.java:15)
+2020-06-04 17:41:07,299  INFO [main] - com.bridz.clinique_management.CliniqueManagementApplication.main 13 - Main method called
+2020-06-04 17:45:07,879  INFO [main] - com.bridz.clinique_management.CliniqueManagementApplication.main 13 - Main method called
+2020-06-04 17:45:32,590  INFO [main] - com.bridz.clinique_management.service.CliniqueImplementation.addPatient 212 - com.fasterxml.jackson.databind.exc.InvalidDefinitionException: Cannot find a (Map) Key deserializer for type [simple type, class java.time.LocalDate]
+ at [Source: (FileInputStream); line: 1, column: 1]
+com.fasterxml.jackson.databind.exc.InvalidDefinitionException: Cannot find a (Map) Key deserializer for type [simple type, class java.time.LocalDate]
+ at [Source: (FileInputStream); line: 1, column: 1]
+	at com.fasterxml.jackson.databind.exc.InvalidDefinitionException.from(InvalidDefinitionException.java:67)
+	at com.fasterxml.jackson.databind.DeserializationContext.reportBadDefinition(DeserializationContext.java:1611)
+	at com.fasterxml.jackson.databind.deser.DeserializerCache._handleUnknownKeyDeserializer(DeserializerCache.java:602)
+	at com.fasterxml.jackson.databind.deser.DeserializerCache.findKeyDeserializer(DeserializerCache.java:168)
+	at com.fasterxml.jackson.databind.DeserializationContext.findKeyDeserializer(DeserializationContext.java:514)
+	at com.fasterxml.jackson.databind.deser.std.MapDeserializer.createContextual(MapDeserializer.java:248)
+	at com.fasterxml.jackson.databind.DeserializationContext.handlePrimaryContextualization(DeserializationContext.java:665)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializerBase.resolve(BeanDeserializerBase.java:496)
+	at com.fasterxml.jackson.databind.deser.DeserializerCache._createAndCache2(DeserializerCache.java:293)
+	at com.fasterxml.jackson.databind.deser.DeserializerCache._createAndCacheValueDeserializer(DeserializerCache.java:244)
+	at com.fasterxml.jackson.databind.deser.DeserializerCache.findValueDeserializer(DeserializerCache.java:142)
+	at com.fasterxml.jackson.databind.DeserializationContext.findContextualValueDeserializer(DeserializationContext.java:458)
+	at com.fasterxml.jackson.databind.deser.std.CollectionDeserializer.createContextual(CollectionDeserializer.java:182)
+	at com.fasterxml.jackson.databind.deser.std.CollectionDeserializer.createContextual(CollectionDeserializer.java:27)
+	at com.fasterxml.jackson.databind.DeserializationContext.handleSecondaryContextualization(DeserializationContext.java:696)
+	at com.fasterxml.jackson.databind.DeserializationContext.findRootValueDeserializer(DeserializationContext.java:496)
+	at com.fasterxml.jackson.databind.ObjectMapper._findRootDeserializer(ObjectMapper.java:4669)
+	at com.fasterxml.jackson.databind.ObjectMapper._readMapAndClose(ObjectMapper.java:4478)
+	at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:3479)
+	at com.bridz.clinique_management.service.CliniqueImplementation.addPatient(CliniqueImplementation.java:197)
+	at com.bridz.clinique_management.service.CliniqueImplementation.patient(CliniqueImplementation.java:133)
+	at com.bridz.clinique_management.controller.CliniqueController.DisplayUserMenu(CliniqueController.java:31)
+	at com.bridz.clinique_management.controller.CliniqueController.DisplayUserMenu(CliniqueController.java:25)
+	at com.bridz.clinique_management.CliniqueManagementApplication.main(CliniqueManagementApplication.java:15)
+2020-06-04 17:51:17,839  INFO [main] - com.bridz.clinique_management.CliniqueManagementApplication.main 13 - Main method called
+2020-06-04 17:51:43,080  INFO [main] - com.bridz.clinique_management.CliniqueManagementApplication.main 13 - Main method called
+2020-06-04 17:52:09,111  INFO [main] - com.bridz.clinique_management.service.CliniqueImplementation.addPatient 216 - com.fasterxml.jackson.databind.exc.InvalidDefinitionException: Cannot find a (Map) Key deserializer for type [simple type, class java.time.LocalDate]
+ at [Source: (FileInputStream); line: 1, column: 1]
+com.fasterxml.jackson.databind.exc.InvalidDefinitionException: Cannot find a (Map) Key deserializer for type [simple type, class java.time.LocalDate]
+ at [Source: (FileInputStream); line: 1, column: 1]
+	at com.fasterxml.jackson.databind.exc.InvalidDefinitionException.from(InvalidDefinitionException.java:67)
+	at com.fasterxml.jackson.databind.DeserializationContext.reportBadDefinition(DeserializationContext.java:1611)
+	at com.fasterxml.jackson.databind.deser.DeserializerCache._handleUnknownKeyDeserializer(DeserializerCache.java:602)
+	at com.fasterxml.jackson.databind.deser.DeserializerCache.findKeyDeserializer(DeserializerCache.java:168)
+	at com.fasterxml.jackson.databind.DeserializationContext.findKeyDeserializer(DeserializationContext.java:514)
+	at com.fasterxml.jackson.databind.deser.std.MapDeserializer.createContextual(MapDeserializer.java:248)
+	at com.fasterxml.jackson.databind.DeserializationContext.handleSecondaryContextualization(DeserializationContext.java:696)
+	at com.fasterxml.jackson.databind.DeserializationContext.findContextualValueDeserializer(DeserializationContext.java:460)
+	at com.fasterxml.jackson.databind.deser.std.CollectionDeserializer.createContextual(CollectionDeserializer.java:182)
+	at com.fasterxml.jackson.databind.deser.std.CollectionDeserializer.createContextual(CollectionDeserializer.java:27)
+	at com.fasterxml.jackson.databind.DeserializationContext.handlePrimaryContextualization(DeserializationContext.java:665)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializerBase.resolve(BeanDeserializerBase.java:496)
+	at com.fasterxml.jackson.databind.deser.DeserializerCache._createAndCache2(DeserializerCache.java:293)
+	at com.fasterxml.jackson.databind.deser.DeserializerCache._createAndCacheValueDeserializer(DeserializerCache.java:244)
+	at com.fasterxml.jackson.databind.deser.DeserializerCache.findValueDeserializer(DeserializerCache.java:142)
+	at com.fasterxml.jackson.databind.DeserializationContext.findContextualValueDeserializer(DeserializationContext.java:458)
+	at com.fasterxml.jackson.databind.deser.std.CollectionDeserializer.createContextual(CollectionDeserializer.java:182)
+	at com.fasterxml.jackson.databind.deser.std.CollectionDeserializer.createContextual(CollectionDeserializer.java:27)
+	at com.fasterxml.jackson.databind.DeserializationContext.handleSecondaryContextualization(DeserializationContext.java:696)
+	at com.fasterxml.jackson.databind.DeserializationContext.findRootValueDeserializer(DeserializationContext.java:496)
+	at com.fasterxml.jackson.databind.ObjectMapper._findRootDeserializer(ObjectMapper.java:4669)
+	at com.fasterxml.jackson.databind.ObjectMapper._readMapAndClose(ObjectMapper.java:4478)
+	at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:3479)
+	at com.bridz.clinique_management.service.CliniqueImplementation.addPatient(CliniqueImplementation.java:200)
+	at com.bridz.clinique_management.service.CliniqueImplementation.patient(CliniqueImplementation.java:136)
+	at com.bridz.clinique_management.controller.CliniqueController.DisplayUserMenu(CliniqueController.java:31)
+	at com.bridz.clinique_management.controller.CliniqueController.DisplayUserMenu(CliniqueController.java:25)
+	at com.bridz.clinique_management.CliniqueManagementApplication.main(CliniqueManagementApplication.java:15)
+2020-06-04 18:00:38,887  INFO [main] - com.bridz.clinique_management.CliniqueManagementApplication.main 13 - Main method called
+2020-06-04 18:01:01,633  INFO [main] - com.bridz.clinique_management.service.CliniqueImplementation.addPatient 216 - com.fasterxml.jackson.databind.exc.InvalidDefinitionException: Cannot find a (Map) Key deserializer for type [simple type, class java.time.LocalDate]
+ at [Source: (FileInputStream); line: 1, column: 1]
+com.fasterxml.jackson.databind.exc.InvalidDefinitionException: Cannot find a (Map) Key deserializer for type [simple type, class java.time.LocalDate]
+ at [Source: (FileInputStream); line: 1, column: 1]
+	at com.fasterxml.jackson.databind.exc.InvalidDefinitionException.from(InvalidDefinitionException.java:67)
+	at com.fasterxml.jackson.databind.DeserializationContext.reportBadDefinition(DeserializationContext.java:1611)
+	at com.fasterxml.jackson.databind.deser.DeserializerCache._handleUnknownKeyDeserializer(DeserializerCache.java:602)
+	at com.fasterxml.jackson.databind.deser.DeserializerCache.findKeyDeserializer(DeserializerCache.java:168)
+	at com.fasterxml.jackson.databind.DeserializationContext.findKeyDeserializer(DeserializationContext.java:514)
+	at com.fasterxml.jackson.databind.deser.std.MapDeserializer.createContextual(MapDeserializer.java:248)
+	at com.fasterxml.jackson.databind.DeserializationContext.handleSecondaryContextualization(DeserializationContext.java:696)
+	at com.fasterxml.jackson.databind.DeserializationContext.findContextualValueDeserializer(DeserializationContext.java:460)
+	at com.fasterxml.jackson.databind.deser.std.CollectionDeserializer.createContextual(CollectionDeserializer.java:182)
+	at com.fasterxml.jackson.databind.deser.std.CollectionDeserializer.createContextual(CollectionDeserializer.java:27)
+	at com.fasterxml.jackson.databind.DeserializationContext.handlePrimaryContextualization(DeserializationContext.java:665)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializerBase.resolve(BeanDeserializerBase.java:496)
+	at com.fasterxml.jackson.databind.deser.DeserializerCache._createAndCache2(DeserializerCache.java:293)
+	at com.fasterxml.jackson.databind.deser.DeserializerCache._createAndCacheValueDeserializer(DeserializerCache.java:244)
+	at com.fasterxml.jackson.databind.deser.DeserializerCache.findValueDeserializer(DeserializerCache.java:142)
+	at com.fasterxml.jackson.databind.DeserializationContext.findContextualValueDeserializer(DeserializationContext.java:458)
+	at com.fasterxml.jackson.databind.deser.std.CollectionDeserializer.createContextual(CollectionDeserializer.java:182)
+	at com.fasterxml.jackson.databind.deser.std.CollectionDeserializer.createContextual(CollectionDeserializer.java:27)
+	at com.fasterxml.jackson.databind.DeserializationContext.handleSecondaryContextualization(DeserializationContext.java:696)
+	at com.fasterxml.jackson.databind.DeserializationContext.findRootValueDeserializer(DeserializationContext.java:496)
+	at com.fasterxml.jackson.databind.ObjectMapper._findRootDeserializer(ObjectMapper.java:4669)
+	at com.fasterxml.jackson.databind.ObjectMapper._readMapAndClose(ObjectMapper.java:4478)
+	at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:3479)
+	at com.bridz.clinique_management.service.CliniqueImplementation.addPatient(CliniqueImplementation.java:200)
+	at com.bridz.clinique_management.service.CliniqueImplementation.patient(CliniqueImplementation.java:136)
+	at com.bridz.clinique_management.controller.CliniqueController.DisplayUserMenu(CliniqueController.java:31)
+	at com.bridz.clinique_management.CliniqueManagementApplication.main(CliniqueManagementApplication.java:15)
+2020-06-04 18:01:50,728  INFO [main] - com.bridz.clinique_management.CliniqueManagementApplication.main 13 - Main method called
+2020-06-04 18:02:05,872  INFO [main] - com.bridz.clinique_management.service.CliniqueImplementation.addPatient 216 - com.fasterxml.jackson.databind.exc.InvalidDefinitionException: Cannot find a (Map) Key deserializer for type [simple type, class java.time.LocalDate]
+ at [Source: (FileInputStream); line: 1, column: 1]
+com.fasterxml.jackson.databind.exc.InvalidDefinitionException: Cannot find a (Map) Key deserializer for type [simple type, class java.time.LocalDate]
+ at [Source: (FileInputStream); line: 1, column: 1]
+	at com.fasterxml.jackson.databind.exc.InvalidDefinitionException.from(InvalidDefinitionException.java:67)
+	at com.fasterxml.jackson.databind.DeserializationContext.reportBadDefinition(DeserializationContext.java:1611)
+	at com.fasterxml.jackson.databind.deser.DeserializerCache._handleUnknownKeyDeserializer(DeserializerCache.java:602)
+	at com.fasterxml.jackson.databind.deser.DeserializerCache.findKeyDeserializer(DeserializerCache.java:168)
+	at com.fasterxml.jackson.databind.DeserializationContext.findKeyDeserializer(DeserializationContext.java:514)
+	at com.fasterxml.jackson.databind.deser.std.MapDeserializer.createContextual(MapDeserializer.java:248)
+	at com.fasterxml.jackson.databind.DeserializationContext.handleSecondaryContextualization(DeserializationContext.java:696)
+	at com.fasterxml.jackson.databind.DeserializationContext.findContextualValueDeserializer(DeserializationContext.java:460)
+	at com.fasterxml.jackson.databind.deser.std.CollectionDeserializer.createContextual(CollectionDeserializer.java:182)
+	at com.fasterxml.jackson.databind.deser.std.CollectionDeserializer.createContextual(CollectionDeserializer.java:27)
+	at com.fasterxml.jackson.databind.DeserializationContext.handlePrimaryContextualization(DeserializationContext.java:665)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializerBase.resolve(BeanDeserializerBase.java:496)
+	at com.fasterxml.jackson.databind.deser.DeserializerCache._createAndCache2(DeserializerCache.java:293)
+	at com.fasterxml.jackson.databind.deser.DeserializerCache._createAndCacheValueDeserializer(DeserializerCache.java:244)
+	at com.fasterxml.jackson.databind.deser.DeserializerCache.findValueDeserializer(DeserializerCache.java:142)
+	at com.fasterxml.jackson.databind.DeserializationContext.findContextualValueDeserializer(DeserializationContext.java:458)
+	at com.fasterxml.jackson.databind.deser.std.CollectionDeserializer.createContextual(CollectionDeserializer.java:182)
+	at com.fasterxml.jackson.databind.deser.std.CollectionDeserializer.createContextual(CollectionDeserializer.java:27)
+	at com.fasterxml.jackson.databind.DeserializationContext.handleSecondaryContextualization(DeserializationContext.java:696)
+	at com.fasterxml.jackson.databind.DeserializationContext.findRootValueDeserializer(DeserializationContext.java:496)
+	at com.fasterxml.jackson.databind.ObjectMapper._findRootDeserializer(ObjectMapper.java:4669)
+	at com.fasterxml.jackson.databind.ObjectMapper._readMapAndClose(ObjectMapper.java:4478)
+	at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:3479)
+	at com.bridz.clinique_management.service.CliniqueImplementation.addPatient(CliniqueImplementation.java:200)
+	at com.bridz.clinique_management.service.CliniqueImplementation.patient(CliniqueImplementation.java:136)
+	at com.bridz.clinique_management.controller.CliniqueController.DisplayUserMenu(CliniqueController.java:31)
+	at com.bridz.clinique_management.CliniqueManagementApplication.main(CliniqueManagementApplication.java:15)
+2020-06-04 18:04:41,368  INFO [main] - com.bridz.clinique_management.CliniqueManagementApplication.main 13 - Main method called
+2020-06-04 18:05:00,599  INFO [main] - com.bridz.clinique_management.CliniqueManagementApplication.main 13 - Main method called
+2020-06-04 18:05:20,171  INFO [main] - com.bridz.clinique_management.service.CliniqueImplementation.addPatient 216 - com.fasterxml.jackson.databind.exc.InvalidDefinitionException: Cannot construct instance of `java.time.LocalTime` (no Creators, like default constructor, exist): cannot deserialize from Object value (no delegate- or property-based Creator)
+ at [Source: (FileInputStream); line: 1, column: 69] (through reference chain: java.util.ArrayList[0]->com.bridz.clinique_management.model.Doctor["availability"])
+com.fasterxml.jackson.databind.exc.InvalidDefinitionException: Cannot construct instance of `java.time.LocalTime` (no Creators, like default constructor, exist): cannot deserialize from Object value (no delegate- or property-based Creator)
+ at [Source: (FileInputStream); line: 1, column: 69] (through reference chain: java.util.ArrayList[0]->com.bridz.clinique_management.model.Doctor["availability"])
+	at com.fasterxml.jackson.databind.exc.InvalidDefinitionException.from(InvalidDefinitionException.java:67)
+	at com.fasterxml.jackson.databind.DeserializationContext.reportBadDefinition(DeserializationContext.java:1611)
+	at com.fasterxml.jackson.databind.DatabindContext.reportBadDefinition(DatabindContext.java:400)
+	at com.fasterxml.jackson.databind.DeserializationContext.handleMissingInstantiator(DeserializationContext.java:1077)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializerBase.deserializeFromObjectUsingNonDefault(BeanDeserializerBase.java:1320)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserializeFromObject(BeanDeserializer.java:331)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserialize(BeanDeserializer.java:164)
+	at com.fasterxml.jackson.databind.deser.impl.MethodProperty.deserializeAndSet(MethodProperty.java:129)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.vanillaDeserialize(BeanDeserializer.java:293)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserialize(BeanDeserializer.java:156)
+	at com.fasterxml.jackson.databind.deser.std.CollectionDeserializer.deserialize(CollectionDeserializer.java:285)
+	at com.fasterxml.jackson.databind.deser.std.CollectionDeserializer.deserialize(CollectionDeserializer.java:244)
+	at com.fasterxml.jackson.databind.deser.std.CollectionDeserializer.deserialize(CollectionDeserializer.java:27)
+	at com.fasterxml.jackson.databind.ObjectMapper._readMapAndClose(ObjectMapper.java:4482)
+	at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:3479)
+	at com.bridz.clinique_management.service.CliniqueImplementation.addPatient(CliniqueImplementation.java:200)
+	at com.bridz.clinique_management.service.CliniqueImplementation.patient(CliniqueImplementation.java:136)
+	at com.bridz.clinique_management.controller.CliniqueController.DisplayUserMenu(CliniqueController.java:31)
+	at com.bridz.clinique_management.controller.CliniqueController.DisplayUserMenu(CliniqueController.java:25)
+	at com.bridz.clinique_management.CliniqueManagementApplication.main(CliniqueManagementApplication.java:15)
+2020-06-04 18:10:07,413  INFO [main] - com.bridz.clinique_management.CliniqueManagementApplication.main 13 - Main method called
+2020-06-04 18:10:42,535  INFO [main] - com.bridz.clinique_management.service.CliniqueImplementation.addPatient 216 - com.fasterxml.jackson.databind.exc.InvalidDefinitionException: Cannot construct instance of `java.time.LocalTime` (no Creators, like default constructor, exist): no String-argument constructor/factory method to deserialize from String value ('05:05:00 AM')
+ at [Source: (FileInputStream); line: 1, column: 69] (through reference chain: java.util.ArrayList[0]->com.bridz.clinique_management.model.Doctor["availability"])
+com.fasterxml.jackson.databind.exc.InvalidDefinitionException: Cannot construct instance of `java.time.LocalTime` (no Creators, like default constructor, exist): no String-argument constructor/factory method to deserialize from String value ('05:05:00 AM')
+ at [Source: (FileInputStream); line: 1, column: 69] (through reference chain: java.util.ArrayList[0]->com.bridz.clinique_management.model.Doctor["availability"])
+	at com.fasterxml.jackson.databind.exc.InvalidDefinitionException.from(InvalidDefinitionException.java:67)
+	at com.fasterxml.jackson.databind.DeserializationContext.reportBadDefinition(DeserializationContext.java:1611)
+	at com.fasterxml.jackson.databind.DatabindContext.reportBadDefinition(DatabindContext.java:400)
+	at com.fasterxml.jackson.databind.DeserializationContext.handleMissingInstantiator(DeserializationContext.java:1077)
+	at com.fasterxml.jackson.databind.deser.ValueInstantiator._createFromStringFallbacks(ValueInstantiator.java:371)
+	at com.fasterxml.jackson.databind.deser.std.StdValueInstantiator.createFromString(StdValueInstantiator.java:323)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializerBase.deserializeFromString(BeanDeserializerBase.java:1396)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer._deserializeOther(BeanDeserializer.java:176)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserialize(BeanDeserializer.java:166)
+	at com.fasterxml.jackson.databind.deser.impl.MethodProperty.deserializeAndSet(MethodProperty.java:129)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.vanillaDeserialize(BeanDeserializer.java:293)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserialize(BeanDeserializer.java:156)
+	at com.fasterxml.jackson.databind.deser.std.CollectionDeserializer.deserialize(CollectionDeserializer.java:285)
+	at com.fasterxml.jackson.databind.deser.std.CollectionDeserializer.deserialize(CollectionDeserializer.java:244)
+	at com.fasterxml.jackson.databind.deser.std.CollectionDeserializer.deserialize(CollectionDeserializer.java:27)
+	at com.fasterxml.jackson.databind.ObjectMapper._readMapAndClose(ObjectMapper.java:4482)
+	at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:3479)
+	at com.bridz.clinique_management.service.CliniqueImplementation.addPatient(CliniqueImplementation.java:200)
+	at com.bridz.clinique_management.service.CliniqueImplementation.patient(CliniqueImplementation.java:136)
+	at com.bridz.clinique_management.controller.CliniqueController.DisplayUserMenu(CliniqueController.java:31)
+	at com.bridz.clinique_management.controller.CliniqueController.DisplayUserMenu(CliniqueController.java:25)
+	at com.bridz.clinique_management.CliniqueManagementApplication.main(CliniqueManagementApplication.java:15)
+2020-06-04 18:14:18,416  INFO [main] - com.bridz.clinique_management.CliniqueManagementApplication.main 13 - Main method called
+2020-06-04 18:14:33,033  INFO [main] - com.bridz.clinique_management.CliniqueManagementApplication.main 13 - Main method called
+2020-06-04 18:17:17,347  INFO [main] - com.bridz.clinique_management.CliniqueManagementApplication.main 13 - Main method called
+2020-06-04 18:29:43,846  INFO [main] - com.bridz.clinique_management.CliniqueManagementApplication.main 13 - Main method called
+2020-06-04 19:02:48,913  INFO [main] - com.bridz.clinique_management.CliniqueManagementApplication.main 13 - Main method called
+2020-06-04 19:34:56,642  INFO [main] - com.bridz.clinique_management.CliniqueManagementApplication.main 13 - Main method called
+2020-06-04 19:54:26,525  INFO [main] - com.bridz.clinique_management.CliniqueManagementApplication.main 13 - Main method called
+2020-06-04 19:55:28,010  INFO [main] - com.bridz.clinique_management.CliniqueManagementApplication.main 13 - Main method called
+2020-06-04 19:55:39,622  INFO [main] - com.bridz.clinique_management.CliniqueManagementApplication.main 13 - Main method called
+2020-06-04 20:19:09,121  INFO [main] - com.bridz.clinique_management.CliniqueManagementApplication.main 13 - Main method called
+2020-06-04 20:55:49,865  INFO [main] - com.bridz.clinique_management.CliniqueManagementApplication.main 13 - Main method called
+2020-06-04 20:57:08,117  INFO [main] - com.bridz.clinique_management.CliniqueManagementApplication.main 13 - Main method called
+2020-06-04 20:59:04,398  INFO [main] - com.bridz.clinique_management.CliniqueManagementApplication.main 13 - Main method called
+2020-06-04 21:04:35,680  INFO [main] - com.bridz.clinique_management.CliniqueManagementApplication.main 13 - Main method called
+2020-06-04 22:43:00,119  INFO [main] - com.bridz.clinique_management.CliniqueManagementApplication.main 13 - Main method called
+2020-06-04 23:34:32,419  INFO [main] - com.bridz.clinique_management.CliniqueManagementApplication.main 13 - Main method called
