@@ -31,7 +31,7 @@ public class CliniqueImplementation implements Clinique {
 	ObjectMapper objectMapper = GetInstance.INSTANCE.getObjectMapperInstance();
 
 	public static Logger logger = Logger.getLogger(CliniqueImplementation.class);
-	int patientIndex = 0;
+//	int patientIndex = 0;
 	int visitedPetientCount = 0;
 	int patientVisitorComparater = 0;
 
@@ -145,7 +145,7 @@ public class CliniqueImplementation implements Clinique {
 			inputStream = GetInstance.INSTANCE.getFileInputStreamInstance();
 			TypeReference<List<Doctor>> typeReference = new TypeReference<List<Doctor>>() {
 			};
-			
+
 			try {
 				List<Doctor> doctorList = objectMapper.readValue(inputStream, typeReference);
 			} catch (MismatchedInputException mismatchedInputException) {
@@ -155,7 +155,7 @@ public class CliniqueImplementation implements Clinique {
 				System.out.println("\nDoctor added successfully\n");
 				this.doctor();
 			}
-			
+
 			if (doctorList.isEmpty()) {
 				doctorList.add(doctor);
 			} else {
@@ -207,11 +207,11 @@ public class CliniqueImplementation implements Clinique {
 		year = scanner.nextInt();
 		appointmentDate = LocalDate.of(year, month, day);
 
-		patient.setId(patientIndex);
+//		patient.setId(patientIndex);
 		patient.setName(name);
 		patient.setMobileNumber(mobileNumber);
 		patient.setAge(age);
-		patientIndex++;
+//		patientIndex++;
 
 		try {
 			inputStream = GetInstance.INSTANCE.getFileInputStreamInstance();
@@ -231,10 +231,11 @@ public class CliniqueImplementation implements Clinique {
 
 					if (doctorDetails.getAppointment().isEmpty()) {
 
+						patient.setId(doctorDetails.getAppointment().size());
 						patientList.add(patient);
 						Map<String, List<Patient>> dateAndPatientDetails = new HashMap<>();
 						dateAndPatientDetails.put(appointmentDate.toString(), patientList);
-						patientIndex++;
+//						patientIndex++;
 
 						appointmentMapList.add(dateAndPatientDetails);
 						doctorDetails.setAppointment(appointmentMapList);
@@ -257,13 +258,20 @@ public class CliniqueImplementation implements Clinique {
 								System.out.println("\n Appointment is full please choose next date of appointment \n");
 								this.patient();
 							} else {
+								patient.setId(dateAndPatientDetails.get(appointmentDate.toString()).size());
 								dateAndPatientDetails.get(appointmentDate.toString()).add(patient);
-								patientIndex++;
+//								patientIndex++;
 							}
 						} else {
+
+							if (dateAndPatientDetails.get(appointmentDate.toString()) == null) {
+								patient.setId(0);
+							} else {
+								patient.setId(dateAndPatientDetails.get(appointmentDate.toString()).size());
+							}
 							patientList.add(patient);
 							dateAndPatientDetails.put(appointmentDate.toString(), patientList);
-							patientIndex++;
+//							patientIndex++;
 						}
 
 						appointmentMapList.add(dateAndPatientDetails);
