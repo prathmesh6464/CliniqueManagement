@@ -11,6 +11,8 @@ import java.io.FileNotFoundException;
 import com.bridz.clinique_management.model.Doctor;
 import com.bridz.clinique_management.model.Patient;
 import com.bridz.clinique_management.service.CliniqueImplementation;
+import com.bridz.clinique_management.service.DoctorImplementation;
+import com.bridz.clinique_management.service.PatientImplementation;
 import com.bridz.clinique_management.controller.CliniqueController;
 
 public enum GetInstance {
@@ -44,10 +46,18 @@ public enum GetInstance {
 		return new Doctor();
 	}
 
+	public PatientImplementation getPatientsInstance() {
+		return new PatientImplementation();
+	}
+
+	public DoctorImplementation getDoctorsInstance() {
+		return new DoctorImplementation();
+	}
+
 	public CliniqueImplementation getCliniqueInstance() {
 		return new CliniqueImplementation();
 	}
-	
+
 	public CliniqueController getCliniqueControllerInstance() {
 		return new CliniqueController();
 	}
