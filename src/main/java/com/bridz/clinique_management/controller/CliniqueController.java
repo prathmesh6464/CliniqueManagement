@@ -8,9 +8,9 @@ import java.util.Scanner;
 
 public class CliniqueController {
 
-	Scanner scanner = GetInstance.INSTANCE.getScannerInstance();
-	Clinique clinique = GetInstance.INSTANCE.getCliniqueInstance();
-	int chosedOption;
+	private Scanner scanner = GetInstance.INSTANCE.getScannerInstance();
+	private Clinique clinique = GetInstance.INSTANCE.getCliniqueInstance();
+	private int chosedOption;
 
 	public void DisplayUserMenu() {
 
