@@ -19,6 +19,7 @@ import com.bridz.clinique_management.pattern.GetInstance;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.exc.MismatchedInputException;
 
 import org.apache.log4j.Logger;
 
@@ -141,21 +142,27 @@ public class CliniqueImplementation implements Clinique {
 
 		try {
 
+			inputStream = GetInstance.INSTANCE.getFileInputStreamInstance();
+			TypeReference<List<Doctor>> typeReference = new TypeReference<List<Doctor>>() {
+			};
+			
+			try {
+				List<Doctor> doctorList = objectMapper.readValue(inputStream, typeReference);
+			} catch (MismatchedInputException mismatchedInputException) {
+				logger.info(mismatchedInputException, mismatchedInputException);
+				doctorList.add(doctor);
+				objectMapper.writeValue(file, doctorList);
+				System.out.println("\nDoctor added successfully\n");
+				this.doctor();
+			}
+			
 			if (doctorList.isEmpty()) {
 				doctorList.add(doctor);
 			} else {
-
-				inputStream = GetInstance.INSTANCE.getFileInputStreamInstance();
-				TypeReference<List<Doctor>> typeReference = new TypeReference<List<Doctor>>() {
-				};
-
-				List<Doctor> doctorList = objectMapper.readValue(inputStream, typeReference);
-
 				doctor.setId(doctorList.size());
 				doctorList.add(doctor);
-
 			}
-			
+
 			objectMapper.writeValue(file, doctorList);
 			System.out.println("\nDoctor added successfully\n");
 			this.doctor();
