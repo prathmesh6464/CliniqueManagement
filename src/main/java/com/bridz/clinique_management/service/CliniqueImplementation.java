@@ -31,7 +31,6 @@ public class CliniqueImplementation implements Clinique {
 	ObjectMapper objectMapper = GetInstance.INSTANCE.getObjectMapperInstance();
 
 	public static Logger logger = Logger.getLogger(CliniqueImplementation.class);
-//	int patientIndex = 0;
 	int visitedPetientCount = 0;
 	int patientVisitorComparater = 0;
 
@@ -207,11 +206,9 @@ public class CliniqueImplementation implements Clinique {
 		year = scanner.nextInt();
 		appointmentDate = LocalDate.of(year, month, day);
 
-//		patient.setId(patientIndex);
 		patient.setName(name);
 		patient.setMobileNumber(mobileNumber);
 		patient.setAge(age);
-//		patientIndex++;
 
 		try {
 			inputStream = GetInstance.INSTANCE.getFileInputStreamInstance();
@@ -235,7 +232,6 @@ public class CliniqueImplementation implements Clinique {
 						patientList.add(patient);
 						Map<String, List<Patient>> dateAndPatientDetails = new HashMap<>();
 						dateAndPatientDetails.put(appointmentDate.toString(), patientList);
-//						patientIndex++;
 
 						appointmentMapList.add(dateAndPatientDetails);
 						doctorDetails.setAppointment(appointmentMapList);
@@ -260,7 +256,7 @@ public class CliniqueImplementation implements Clinique {
 							} else {
 								patient.setId(dateAndPatientDetails.get(appointmentDate.toString()).size());
 								dateAndPatientDetails.get(appointmentDate.toString()).add(patient);
-//								patientIndex++;
+
 							}
 						} else {
 
@@ -271,7 +267,7 @@ public class CliniqueImplementation implements Clinique {
 							}
 							patientList.add(patient);
 							dateAndPatientDetails.put(appointmentDate.toString(), patientList);
-//							patientIndex++;
+
 						}
 
 						appointmentMapList.add(dateAndPatientDetails);
@@ -547,16 +543,9 @@ public class CliniqueImplementation implements Clinique {
 				doctorDetailsMapList.forEach(dateAndPatientsDetail -> {
 					dateAndPatientsDetail.entrySet().forEach(eachEntry -> {
 						visitedPetientCount += eachEntry.getValue().size();
-						int previousValue = temporaryCalculation.getOrDefault(doctorDetails.getSpecialization(), 0);
-						int value = 0;
-						if (previousValue == 0) {
-							value = -visitedPetientCount;
-							System.out.println();
-						}
 						temporaryCalculation.put(doctorDetails.getSpecialization(),
-								temporaryCalculation.getOrDefault(doctorDetails.getSpecialization(), value)
-										+ visitedPetientCount);
-
+								temporaryCalculation.getOrDefault(doctorDetails.getSpecialization(),
+										-visitedPetientCount) + visitedPetientCount);
 					});
 				});
 			});
@@ -564,7 +553,7 @@ public class CliniqueImplementation implements Clinique {
 			temporaryCalculation.entrySet().forEach(data -> {
 				if (Collections.max(temporaryCalculation.values()) == data.getValue()) {
 
-					System.out.println("Popular specialization : " + data.getKey() + "  value : " + data.getValue());
+					System.out.println("Popular specialization : " + data.getKey());
 				}
 			});
 
