@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.List;
 import java.util.Scanner;
-
+import java.util.Collections;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
@@ -33,7 +33,6 @@ public class CliniqueImplementation implements Clinique {
 	int patientIndex = 0;
 	int visitedPetientCount = 0;
 	int patientVisitorComparater = 0;
-	String popularDoctor;
 
 	public void doctor() {
 
@@ -142,19 +141,21 @@ public class CliniqueImplementation implements Clinique {
 
 		try {
 
-			inputStream = GetInstance.INSTANCE.getFileInputStreamInstance();
-			TypeReference<List<Doctor>> typeReference = new TypeReference<List<Doctor>>() {
-			};
-
-			List<Doctor> doctorList = objectMapper.readValue(inputStream, typeReference);
-
 			if (doctorList.isEmpty()) {
 				doctorList.add(doctor);
 			} else {
+
+				inputStream = GetInstance.INSTANCE.getFileInputStreamInstance();
+				TypeReference<List<Doctor>> typeReference = new TypeReference<List<Doctor>>() {
+				};
+
+				List<Doctor> doctorList = objectMapper.readValue(inputStream, typeReference);
+
 				doctor.setId(doctorList.size());
 				doctorList.add(doctor);
-			}
 
+			}
+			
 			objectMapper.writeValue(file, doctorList);
 			System.out.println("\nDoctor added successfully\n");
 			this.doctor();
@@ -270,9 +271,6 @@ public class CliniqueImplementation implements Clinique {
 						}
 
 					});
-				} else {
-					System.out.println("Enter id is not available");
-					this.patient();
 				}
 			});
 
@@ -511,6 +509,58 @@ public class CliniqueImplementation implements Clinique {
 
 	public void popularSpecialization() {
 
+		InputStream inputStream;
+
+		try {
+			inputStream = GetInstance.INSTANCE.getFileInputStreamInstance();
+			TypeReference<List<Doctor>> typeReference = new TypeReference<List<Doctor>>() {
+			};
+
+			List<Doctor> doctorList = objectMapper.readValue(inputStream, typeReference);
+
+			if (doctorList.isEmpty()) {
+
+				System.out.println("\n Doctor is not available\n");
+				this.patient();
+			}
+
+			Map<String, Integer> temporaryCalculation = new HashMap<>();
+
+			doctorList.forEach(doctorDetails -> {
+				visitedPetientCount = 0;
+				List<Map<String, List<Patient>>> doctorDetailsMapList = doctorDetails.getAppointment();
+				doctorDetailsMapList.forEach(dateAndPatientsDetail -> {
+					dateAndPatientsDetail.entrySet().forEach(eachEntry -> {
+						visitedPetientCount += eachEntry.getValue().size();
+						int previousValue = temporaryCalculation.getOrDefault(doctorDetails.getSpecialization(), 0);
+						int value = 0;
+						if (previousValue == 0) {
+							value = -visitedPetientCount;
+							System.out.println();
+						}
+						temporaryCalculation.put(doctorDetails.getSpecialization(),
+								temporaryCalculation.getOrDefault(doctorDetails.getSpecialization(), value)
+										+ visitedPetientCount);
+
+					});
+				});
+			});
+
+			temporaryCalculation.entrySet().forEach(data -> {
+				if (Collections.max(temporaryCalculation.values()) == data.getValue()) {
+
+					System.out.println("Popular specialization : " + data.getKey() + "  value : " + data.getValue());
+				}
+			});
+
+			if (System.in.read() != -1) {
+				GetInstance.INSTANCE.getCliniqueControllerInstance().DisplayUserMenu();
+			}
+
+		} catch (Exception exception) {
+			logger.info(exception, exception);
+		}
+
 	}
 
 	public void popularDoctor() {
@@ -532,21 +582,25 @@ public class CliniqueImplementation implements Clinique {
 				this.patient();
 			}
 
+			Map<String, Integer> temporaryCalculation = new HashMap<>();
+
 			doctorList.forEach(doctorDetails -> {
+				visitedPetientCount = 0;
 				List<Map<String, List<Patient>>> doctorDetailsMapList = doctorDetails.getAppointment();
 				doctorDetailsMapList.forEach(dateAndPatientsDetail -> {
 					dateAndPatientsDetail.entrySet().forEach(eachEntry -> {
 						visitedPetientCount += eachEntry.getValue().size();
+						temporaryCalculation.put(doctorDetails.getName(), visitedPetientCount);
 					});
 				});
-				if (visitedPetientCount > patientVisitorComparater) {
-					popularDoctor = doctorDetails.getName();
-					patientVisitorComparater = visitedPetientCount;
-					visitedPetientCount = 0;
+			});
+
+			temporaryCalculation.entrySet().forEach(data -> {
+				if (Collections.max(temporaryCalculation.values()) == data.getValue()) {
+					System.out.println("Popular doctor name : " + data.getKey());
 				}
 			});
 
-			System.out.println(popularDoctor);
 			if (System.in.read() != -1) {
 				GetInstance.INSTANCE.getCliniqueControllerInstance().DisplayUserMenu();
 			}
