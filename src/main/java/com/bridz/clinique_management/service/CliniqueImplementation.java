@@ -1,9 +1,7 @@
 package com.bridz.clinique_management.service;
 
-import java.io.File;
 import java.io.InputStream;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.List;
@@ -22,16 +20,14 @@ import org.apache.log4j.Logger;
 
 public class CliniqueImplementation implements Clinique {
 
-	List<Doctor> doctorList = new ArrayList<Doctor>();
-	Scanner scanner = GetInstance.INSTANCE.getScannerInstance();
-	File file = GetInstance.INSTANCE.getFileInstance();
-	ObjectMapper objectMapper = GetInstance.INSTANCE.getObjectMapperInstance();
-
+	private Scanner scanner = GetInstance.INSTANCE.getScannerInstance();
+	private ObjectMapper objectMapper = GetInstance.INSTANCE.getObjectMapperInstance();
+	private int visitedPetientCount = 0;
+	private int chosedOption;
+	private InputStream inputStream;
+	
 	public static Logger logger = Logger.getLogger(CliniqueImplementation.class);
-	int visitedPetientCount = 0;
-	int patientVisitorComparater = 0;
-	int chosedOption;
-	InputStream inputStream;
+
 
 	public void doctor() {
 
