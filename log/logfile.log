@@ -1,13 +1,270 @@
-2020-06-05 08:12:19,862  INFO [main] - com.bridz.clinique_management.CliniqueManagementApplication.main 13 - Main method called
-2020-06-05 08:15:37,349  INFO [main] - com.bridz.clinique_management.CliniqueManagementApplication.main 13 - Main method called
-2020-06-05 08:15:53,934  INFO [main] - com.bridz.clinique_management.CliniqueManagementApplication.main 13 - Main method called
-2020-06-05 08:19:49,206  INFO [main] - com.bridz.clinique_management.CliniqueManagementApplication.main 13 - Main method called
-2020-06-05 08:21:05,146  INFO [main] - com.bridz.clinique_management.CliniqueManagementApplication.main 13 - Main method called
-2020-06-05 08:22:49,187  INFO [main] - com.bridz.clinique_management.CliniqueManagementApplication.main 13 - Main method called
-2020-06-05 08:25:44,203  INFO [main] - com.bridz.clinique_management.CliniqueManagementApplication.main 13 - Main method called
-2020-06-05 08:25:59,354  INFO [main] - com.bridz.clinique_management.CliniqueManagementApplication.main 13 - Main method called
-2020-06-05 08:27:16,280  INFO [main] - com.bridz.clinique_management.CliniqueManagementApplication.main 13 - Main method called
-2020-06-05 08:27:37,125  INFO [main] - com.bridz.clinique_management.CliniqueManagementApplication.main 13 - Main method called
-2020-06-05 08:30:05,483  INFO [main] - com.bridz.clinique_management.CliniqueManagementApplication.main 13 - Main method called
-2020-06-05 08:39:18,022  INFO [main] - com.bridz.clinique_management.CliniqueManagementApplication.main 13 - Main method called
-2020-06-05 09:28:11,267  INFO [main] - com.bridz.clinique_management.CliniqueManagementApplication.main 13 - Main method called
+2020-06-06 06:08:28,757  INFO [main] - com.bridz.clinique_management.CliniqueManagementApplication.main 13 - Main method called
+2020-06-06 06:08:58,665  INFO [main] - com.bridz.clinique_management.service.CliniqueImplementation.popularSpecialization 559 - com.fasterxml.jackson.databind.exc.MismatchedInputException: No content to map due to end-of-input
+ at [Source: (FileInputStream); line: 1, column: 0]
+com.fasterxml.jackson.databind.exc.MismatchedInputException: No content to map due to end-of-input
+ at [Source: (FileInputStream); line: 1, column: 0]
+	at com.fasterxml.jackson.databind.exc.MismatchedInputException.from(MismatchedInputException.java:59)
+	at com.fasterxml.jackson.databind.ObjectMapper._initForReading(ObjectMapper.java:4624)
+	at com.fasterxml.jackson.databind.ObjectMapper._readMapAndClose(ObjectMapper.java:4469)
+	at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:3479)
+	at com.bridz.clinique_management.service.CliniqueImplementation.popularSpecialization(CliniqueImplementation.java:517)
+	at com.bridz.clinique_management.controller.CliniqueController.DisplayUserMenu(CliniqueController.java:48)
+	at com.bridz.clinique_management.CliniqueManagementApplication.main(CliniqueManagementApplication.java:15)
+2020-06-06 06:14:04,618  INFO [main] - com.bridz.clinique_management.CliniqueManagementApplication.main 13 - Main method called
+2020-06-06 06:14:20,790  INFO [main] - com.bridz.clinique_management.service.CliniqueImplementation.addDoctor 161 - com.fasterxml.jackson.databind.exc.MismatchedInputException: No content to map due to end-of-input
+ at [Source: (FileInputStream); line: 1, column: 0]
+2020-06-06 06:14:49,671  INFO [main] - com.bridz.clinique_management.service.CliniqueImplementation.addDoctor 161 - com.fasterxml.jackson.databind.exc.MismatchedInputException: No content to map due to end-of-input
+ at [Source: (FileInputStream); line: 1, column: 0]
+2020-06-06 06:17:59,412  INFO [main] - com.bridz.clinique_management.CliniqueManagementApplication.main 13 - Main method called
+2020-06-06 06:18:41,876  INFO [main] - com.bridz.clinique_management.CliniqueManagementApplication.main 13 - Main method called
+2020-06-06 06:20:10,579  INFO [main] - com.bridz.clinique_management.CliniqueManagementApplication.main 13 - Main method called
+2020-06-06 06:20:25,513  INFO [main] - com.bridz.clinique_management.service.CliniqueImplementation.addDoctor 165 - com.fasterxml.jackson.databind.exc.MismatchedInputException: No content to map due to end-of-input
+ at [Source: (FileInputStream); line: 1, column: 0]
+2020-06-06 06:21:31,274  INFO [main] - com.bridz.clinique_management.CliniqueManagementApplication.main 13 - Main method called
+2020-06-06 06:29:52,864  INFO [main] - com.bridz.clinique_management.CliniqueManagementApplication.main 13 - Main method called
+2020-06-06 06:33:37,005  INFO [main] - com.bridz.clinique_management.CliniqueManagementApplication.main 13 - Main method called
+2020-06-06 06:33:54,659  INFO [main] - com.bridz.clinique_management.CliniqueManagementApplication.main 13 - Main method called
+2020-06-06 06:34:08,245  INFO [main] - com.bridz.clinique_management.service.CliniqueImplementation.addDoctor 161 - com.fasterxml.jackson.databind.exc.MismatchedInputException: No content to map due to end-of-input
+ at [Source: (FileInputStream); line: 1, column: 0]
+2020-06-06 06:36:26,836  INFO [main] - com.bridz.clinique_management.CliniqueManagementApplication.main 13 - Main method called
+2020-06-06 06:36:46,666  INFO [main] - com.bridz.clinique_management.service.CliniqueImplementation.addDoctor 151 - com.fasterxml.jackson.databind.exc.MismatchedInputException: No content to map due to end-of-input
+ at [Source: (FileInputStream); line: 1, column: 0]
+com.fasterxml.jackson.databind.exc.MismatchedInputException: No content to map due to end-of-input
+ at [Source: (FileInputStream); line: 1, column: 0]
+	at com.fasterxml.jackson.databind.exc.MismatchedInputException.from(MismatchedInputException.java:59)
+	at com.fasterxml.jackson.databind.ObjectMapper._initForReading(ObjectMapper.java:4624)
+	at com.fasterxml.jackson.databind.ObjectMapper._readMapAndClose(ObjectMapper.java:4469)
+	at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:3479)
+	at com.bridz.clinique_management.service.CliniqueImplementation.addDoctor(CliniqueImplementation.java:149)
+	at com.bridz.clinique_management.service.CliniqueImplementation.doctor(CliniqueImplementation.java:51)
+	at com.bridz.clinique_management.controller.CliniqueController.DisplayUserMenu(CliniqueController.java:27)
+	at com.bridz.clinique_management.CliniqueManagementApplication.main(CliniqueManagementApplication.java:15)
+2020-06-06 06:37:43,254  INFO [main] - com.bridz.clinique_management.CliniqueManagementApplication.main 13 - Main method called
+2020-06-06 06:37:55,740  INFO [main] - com.bridz.clinique_management.service.CliniqueImplementation.addDoctor 152 - com.fasterxml.jackson.databind.exc.MismatchedInputException: No content to map due to end-of-input
+ at [Source: (FileInputStream); line: 1, column: 0]
+com.fasterxml.jackson.databind.exc.MismatchedInputException: No content to map due to end-of-input
+ at [Source: (FileInputStream); line: 1, column: 0]
+	at com.fasterxml.jackson.databind.exc.MismatchedInputException.from(MismatchedInputException.java:59)
+	at com.fasterxml.jackson.databind.ObjectMapper._initForReading(ObjectMapper.java:4624)
+	at com.fasterxml.jackson.databind.ObjectMapper._readMapAndClose(ObjectMapper.java:4469)
+	at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:3479)
+	at com.bridz.clinique_management.service.CliniqueImplementation.addDoctor(CliniqueImplementation.java:150)
+	at com.bridz.clinique_management.service.CliniqueImplementation.doctor(CliniqueImplementation.java:51)
+	at com.bridz.clinique_management.controller.CliniqueController.DisplayUserMenu(CliniqueController.java:27)
+	at com.bridz.clinique_management.CliniqueManagementApplication.main(CliniqueManagementApplication.java:15)
+2020-06-06 06:38:47,257  INFO [main] - com.bridz.clinique_management.CliniqueManagementApplication.main 13 - Main method called
+2020-06-06 06:39:20,276  INFO [main] - com.bridz.clinique_management.service.CliniqueImplementation.addDoctor 152 - com.fasterxml.jackson.databind.exc.MismatchedInputException: No content to map due to end-of-input
+ at [Source: (FileInputStream); line: 1, column: 0]
+com.fasterxml.jackson.databind.exc.MismatchedInputException: No content to map due to end-of-input
+ at [Source: (FileInputStream); line: 1, column: 0]
+	at com.fasterxml.jackson.databind.exc.MismatchedInputException.from(MismatchedInputException.java:59)
+	at com.fasterxml.jackson.databind.ObjectMapper._initForReading(ObjectMapper.java:4624)
+	at com.fasterxml.jackson.databind.ObjectMapper._readMapAndClose(ObjectMapper.java:4469)
+	at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:3479)
+	at com.bridz.clinique_management.service.CliniqueImplementation.addDoctor(CliniqueImplementation.java:150)
+	at com.bridz.clinique_management.service.CliniqueImplementation.doctor(CliniqueImplementation.java:51)
+	at com.bridz.clinique_management.controller.CliniqueController.DisplayUserMenu(CliniqueController.java:27)
+	at com.bridz.clinique_management.CliniqueManagementApplication.main(CliniqueManagementApplication.java:15)
+2020-06-06 06:52:50,695  INFO [main] - com.bridz.clinique_management.CliniqueManagementApplication.main 13 - Main method called
+2020-06-06 07:00:41,384  INFO [main] - com.bridz.clinique_management.CliniqueManagementApplication.main 13 - Main method called
+2020-06-06 07:02:41,910  INFO [main] - com.bridz.clinique_management.CliniqueManagementApplication.main 13 - Main method called
+2020-06-06 07:04:10,290  INFO [main] - com.bridz.clinique_management.CliniqueManagementApplication.main 13 - Main method called
+2020-06-06 07:09:50,869  INFO [main] - com.bridz.clinique_management.CliniqueManagementApplication.main 13 - Main method called
+2020-06-06 07:10:02,594  INFO [main] - com.bridz.clinique_management.CliniqueManagementApplication.main 13 - Main method called
+2020-06-06 07:10:13,061  INFO [main] - com.bridz.clinique_management.CliniqueManagementApplication.main 13 - Main method called
+2020-06-06 07:11:59,369  INFO [main] - com.bridz.clinique_management.service.CliniqueImplementation.addPatient 288 - java.lang.NullPointerException
+java.lang.NullPointerException
+	at com.bridz.clinique_management.service.CliniqueImplementation.lambda$1(CliniqueImplementation.java:266)
+	at java.util.ArrayList.forEach(Unknown Source)
+	at com.bridz.clinique_management.service.CliniqueImplementation.lambda$0(CliniqueImplementation.java:253)
+	at java.util.ArrayList.forEach(Unknown Source)
+	at com.bridz.clinique_management.service.CliniqueImplementation.addPatient(CliniqueImplementation.java:229)
+	at com.bridz.clinique_management.service.CliniqueImplementation.patient(CliniqueImplementation.java:88)
+	at com.bridz.clinique_management.service.CliniqueImplementation.lambda$1(CliniqueImplementation.java:278)
+	at java.util.ArrayList.forEach(Unknown Source)
+	at com.bridz.clinique_management.service.CliniqueImplementation.lambda$0(CliniqueImplementation.java:253)
+	at java.util.ArrayList.forEach(Unknown Source)
+	at com.bridz.clinique_management.service.CliniqueImplementation.addPatient(CliniqueImplementation.java:229)
+	at com.bridz.clinique_management.service.CliniqueImplementation.patient(CliniqueImplementation.java:88)
+	at com.bridz.clinique_management.controller.CliniqueController.DisplayUserMenu(CliniqueController.java:34)
+	at com.bridz.clinique_management.CliniqueManagementApplication.main(CliniqueManagementApplication.java:15)
+2020-06-06 07:15:31,923  INFO [main] - com.bridz.clinique_management.CliniqueManagementApplication.main 13 - Main method called
+2020-06-06 07:16:26,155  INFO [main] - com.bridz.clinique_management.service.CliniqueImplementation.addPatient 293 - java.lang.NullPointerException
+java.lang.NullPointerException
+	at com.bridz.clinique_management.service.CliniqueImplementation.lambda$1(CliniqueImplementation.java:267)
+	at java.util.ArrayList.forEach(Unknown Source)
+	at com.bridz.clinique_management.service.CliniqueImplementation.lambda$0(CliniqueImplementation.java:253)
+	at java.util.ArrayList.forEach(Unknown Source)
+	at com.bridz.clinique_management.service.CliniqueImplementation.addPatient(CliniqueImplementation.java:229)
+	at com.bridz.clinique_management.service.CliniqueImplementation.patient(CliniqueImplementation.java:88)
+	at com.bridz.clinique_management.controller.CliniqueController.DisplayUserMenu(CliniqueController.java:34)
+	at com.bridz.clinique_management.CliniqueManagementApplication.main(CliniqueManagementApplication.java:15)
+2020-06-06 07:16:38,595  INFO [main] - com.bridz.clinique_management.CliniqueManagementApplication.main 13 - Main method called
+2020-06-06 07:17:05,575  INFO [main] - com.bridz.clinique_management.service.CliniqueImplementation.addPatient 293 - java.lang.NullPointerException
+java.lang.NullPointerException
+	at com.bridz.clinique_management.service.CliniqueImplementation.lambda$1(CliniqueImplementation.java:267)
+	at java.util.ArrayList.forEach(Unknown Source)
+	at com.bridz.clinique_management.service.CliniqueImplementation.lambda$0(CliniqueImplementation.java:253)
+	at java.util.ArrayList.forEach(Unknown Source)
+	at com.bridz.clinique_management.service.CliniqueImplementation.addPatient(CliniqueImplementation.java:229)
+	at com.bridz.clinique_management.service.CliniqueImplementation.patient(CliniqueImplementation.java:88)
+	at com.bridz.clinique_management.controller.CliniqueController.DisplayUserMenu(CliniqueController.java:34)
+	at com.bridz.clinique_management.CliniqueManagementApplication.main(CliniqueManagementApplication.java:15)
+2020-06-06 07:18:34,345  INFO [main] - com.bridz.clinique_management.CliniqueManagementApplication.main 13 - Main method called
+2020-06-06 07:30:04,636  INFO [main] - com.bridz.clinique_management.CliniqueManagementApplication.main 13 - Main method called
+2020-06-06 07:33:45,570  INFO [main] - com.bridz.clinique_management.CliniqueManagementApplication.main 13 - Main method called
+2020-06-06 07:40:17,688  INFO [main] - com.bridz.clinique_management.CliniqueManagementApplication.main 13 - Main method called
+2020-06-06 07:40:44,400  INFO [main] - com.bridz.clinique_management.CliniqueManagementApplication.main 13 - Main method called
+2020-06-06 07:43:06,431  INFO [main] - com.bridz.clinique_management.CliniqueManagementApplication.main 13 - Main method called
+2020-06-06 07:43:12,412  INFO [main] - com.bridz.clinique_management.CliniqueManagementApplication.main 13 - Main method called
+2020-06-06 07:43:38,142  INFO [main] - com.bridz.clinique_management.CliniqueManagementApplication.main 13 - Main method called
+2020-06-06 07:49:53,294  INFO [main] - com.bridz.clinique_management.CliniqueManagementApplication.main 13 - Main method called
+2020-06-06 07:49:55,930  INFO [main] - com.bridz.clinique_management.service.CliniqueImplementation.popularSpecialization 573 - java.lang.NullPointerException
+java.lang.NullPointerException
+	at com.bridz.clinique_management.service.CliniqueImplementation.lambda$18(CliniqueImplementation.java:547)
+	at java.util.LinkedHashMap$LinkedEntrySet.forEach(Unknown Source)
+	at com.bridz.clinique_management.service.CliniqueImplementation.lambda$17(CliniqueImplementation.java:544)
+	at java.util.ArrayList.forEach(Unknown Source)
+	at com.bridz.clinique_management.service.CliniqueImplementation.lambda$16(CliniqueImplementation.java:543)
+	at java.util.ArrayList.forEach(Unknown Source)
+	at com.bridz.clinique_management.service.CliniqueImplementation.popularSpecialization(CliniqueImplementation.java:540)
+	at com.bridz.clinique_management.controller.CliniqueController.DisplayUserMenu(CliniqueController.java:48)
+	at com.bridz.clinique_management.CliniqueManagementApplication.main(CliniqueManagementApplication.java:15)
+2020-06-06 07:50:54,585  INFO [main] - com.bridz.clinique_management.CliniqueManagementApplication.main 13 - Main method called
+2020-06-06 07:54:12,188  INFO [main] - com.bridz.clinique_management.CliniqueManagementApplication.main 13 - Main method called
+2020-06-06 07:56:34,680  INFO [main] - com.bridz.clinique_management.CliniqueManagementApplication.main 13 - Main method called
+2020-06-06 07:57:35,595  INFO [main] - com.bridz.clinique_management.CliniqueManagementApplication.main 13 - Main method called
+2020-06-06 07:57:48,908  INFO [main] - com.bridz.clinique_management.CliniqueManagementApplication.main 13 - Main method called
+2020-06-06 07:58:36,323  INFO [main] - com.bridz.clinique_management.CliniqueManagementApplication.main 13 - Main method called
+2020-06-06 08:20:33,713  INFO [main] - com.bridz.clinique_management.CliniqueManagementApplication.main 13 - Main method called
+2020-06-06 09:49:39,267  INFO [main] - com.bridz.clinique_management.CliniqueManagementApplication.main 13 - Main method called
+2020-06-06 09:54:40,224  INFO [main] - com.bridz.clinique_management.CliniqueManagementApplication.main 13 - Main method called
+2020-06-06 09:55:02,645  INFO [main] - com.bridz.clinique_management.service.CliniqueImplementation.addDoctor 66 - com.fasterxml.jackson.databind.exc.MismatchedInputException: No content to map due to end-of-input
+ at [Source: (FileInputStream); line: 1, column: 0]
+com.fasterxml.jackson.databind.exc.MismatchedInputException: No content to map due to end-of-input
+ at [Source: (FileInputStream); line: 1, column: 0]
+	at com.fasterxml.jackson.databind.exc.MismatchedInputException.from(MismatchedInputException.java:59)
+	at com.fasterxml.jackson.databind.ObjectMapper._initForReading(ObjectMapper.java:4624)
+	at com.fasterxml.jackson.databind.ObjectMapper._readMapAndClose(ObjectMapper.java:4469)
+	at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:3479)
+	at com.bridz.clinique_management.service.DoctorImplementation.addDoctor(DoctorImplementation.java:64)
+	at com.bridz.clinique_management.service.CliniqueImplementation.doctor(CliniqueImplementation.java:51)
+	at com.bridz.clinique_management.controller.CliniqueController.DisplayUserMenu(CliniqueController.java:27)
+	at com.bridz.clinique_management.CliniqueManagementApplication.main(CliniqueManagementApplication.java:15)
+2020-06-06 09:59:47,855  INFO [main] - com.bridz.clinique_management.CliniqueManagementApplication.main 13 - Main method called
+2020-06-06 10:00:15,084  INFO [main] - com.bridz.clinique_management.CliniqueManagementApplication.main 13 - Main method called
+2020-06-06 10:03:22,481  INFO [main] - com.bridz.clinique_management.service.CliniqueImplementation.addPatient 151 - com.fasterxml.jackson.core.JsonParseException: Unexpected character ('{' (code 123)): was expecting comma to separate Array entries
+ at [Source: (FileInputStream); line: 22, column: 4]
+com.fasterxml.jackson.core.JsonParseException: Unexpected character ('{' (code 123)): was expecting comma to separate Array entries
+ at [Source: (FileInputStream); line: 22, column: 4]
+	at com.fasterxml.jackson.core.JsonParser._constructError(JsonParser.java:1851)
+	at com.fasterxml.jackson.core.base.ParserMinimalBase._reportError(ParserMinimalBase.java:707)
+	at com.fasterxml.jackson.core.base.ParserMinimalBase._reportUnexpectedChar(ParserMinimalBase.java:632)
+	at com.fasterxml.jackson.core.json.UTF8StreamJsonParser.nextToken(UTF8StreamJsonParser.java:741)
+	at com.fasterxml.jackson.databind.deser.std.CollectionDeserializer.deserialize(CollectionDeserializer.java:276)
+	at com.fasterxml.jackson.databind.deser.std.CollectionDeserializer.deserialize(CollectionDeserializer.java:244)
+	at com.fasterxml.jackson.databind.deser.std.CollectionDeserializer.deserialize(CollectionDeserializer.java:27)
+	at com.fasterxml.jackson.databind.ObjectMapper._readMapAndClose(ObjectMapper.java:4482)
+	at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:3479)
+	at com.bridz.clinique_management.service.PatientImplementation.addPatient(PatientImplementation.java:80)
+	at com.bridz.clinique_management.service.CliniqueImplementation.patient(CliniqueImplementation.java:88)
+	at com.bridz.clinique_management.service.PatientImplementation.lambda$1(PatientImplementation.java:141)
+	at java.util.ArrayList.forEach(Unknown Source)
+	at com.bridz.clinique_management.service.PatientImplementation.lambda$0(PatientImplementation.java:111)
+	at java.util.ArrayList.forEach(Unknown Source)
+	at com.bridz.clinique_management.service.PatientImplementation.addPatient(PatientImplementation.java:88)
+	at com.bridz.clinique_management.service.CliniqueImplementation.patient(CliniqueImplementation.java:88)
+	at com.bridz.clinique_management.service.PatientImplementation.lambda$0(PatientImplementation.java:104)
+	at java.util.ArrayList.forEach(Unknown Source)
+	at com.bridz.clinique_management.service.PatientImplementation.addPatient(PatientImplementation.java:88)
+	at com.bridz.clinique_management.service.CliniqueImplementation.patient(CliniqueImplementation.java:88)
+	at com.bridz.clinique_management.controller.CliniqueController.DisplayUserMenu(CliniqueController.java:34)
+	at com.bridz.clinique_management.service.CliniqueImplementation.doctor(CliniqueImplementation.java:64)
+	at com.bridz.clinique_management.service.DoctorImplementation.searchDoctor(DoctorImplementation.java:162)
+	at com.bridz.clinique_management.service.CliniqueImplementation.doctor(CliniqueImplementation.java:59)
+	at com.bridz.clinique_management.service.DoctorImplementation.searchDoctor(DoctorImplementation.java:162)
+	at com.bridz.clinique_management.service.CliniqueImplementation.doctor(CliniqueImplementation.java:59)
+	at com.bridz.clinique_management.service.DoctorImplementation.searchDoctor(DoctorImplementation.java:162)
+	at com.bridz.clinique_management.service.CliniqueImplementation.doctor(CliniqueImplementation.java:59)
+	at com.bridz.clinique_management.service.DoctorImplementation.showDoctors(DoctorImplementation.java:118)
+	at com.bridz.clinique_management.service.CliniqueImplementation.doctor(CliniqueImplementation.java:55)
+	at com.bridz.clinique_management.service.DoctorImplementation.addDoctor(DoctorImplementation.java:83)
+	at com.bridz.clinique_management.service.CliniqueImplementation.doctor(CliniqueImplementation.java:51)
+	at com.bridz.clinique_management.controller.CliniqueController.DisplayUserMenu(CliniqueController.java:27)
+	at com.bridz.clinique_management.CliniqueManagementApplication.main(CliniqueManagementApplication.java:15)
+2020-06-06 10:04:00,480  INFO [main] - com.bridz.clinique_management.CliniqueManagementApplication.main 13 - Main method called
+2020-06-06 10:04:21,059  INFO [main] - com.bridz.clinique_management.CliniqueManagementApplication.main 13 - Main method called
+2020-06-06 10:12:20,957  INFO [main] - com.bridz.clinique_management.service.CliniqueImplementation.lambda$0 106 - java.time.DateTimeException: Invalid value for MonthOfYear (valid values 1 - 12): 34
+java.time.DateTimeException: Invalid value for MonthOfYear (valid values 1 - 12): 34
+	at java.time.temporal.ValueRange.checkValidValue(Unknown Source)
+	at java.time.temporal.ChronoField.checkValidValue(Unknown Source)
+	at java.time.LocalDate.of(Unknown Source)
+	at com.bridz.clinique_management.service.PatientImplementation.addPatient(PatientImplementation.java:69)
+	at com.bridz.clinique_management.service.CliniqueImplementation.patient(CliniqueImplementation.java:88)
+	at com.bridz.clinique_management.service.PatientImplementation.lambda$0(PatientImplementation.java:104)
+	at java.util.ArrayList.forEach(Unknown Source)
+	at com.bridz.clinique_management.service.PatientImplementation.addPatient(PatientImplementation.java:88)
+	at com.bridz.clinique_management.service.CliniqueImplementation.patient(CliniqueImplementation.java:88)
+	at com.bridz.clinique_management.service.PatientImplementation.lambda$1(PatientImplementation.java:117)
+	at java.util.ArrayList.forEach(Unknown Source)
+	at com.bridz.clinique_management.service.PatientImplementation.lambda$0(PatientImplementation.java:111)
+	at java.util.ArrayList.forEach(Unknown Source)
+	at com.bridz.clinique_management.service.PatientImplementation.addPatient(PatientImplementation.java:88)
+	at com.bridz.clinique_management.service.CliniqueImplementation.patient(CliniqueImplementation.java:88)
+	at com.bridz.clinique_management.service.PatientImplementation.lambda$1(PatientImplementation.java:141)
+	at java.util.ArrayList.forEach(Unknown Source)
+	at com.bridz.clinique_management.service.PatientImplementation.lambda$0(PatientImplementation.java:111)
+	at java.util.ArrayList.forEach(Unknown Source)
+	at com.bridz.clinique_management.service.PatientImplementation.addPatient(PatientImplementation.java:88)
+	at com.bridz.clinique_management.service.CliniqueImplementation.patient(CliniqueImplementation.java:88)
+	at com.bridz.clinique_management.service.PatientImplementation.lambda$1(PatientImplementation.java:141)
+	at java.util.ArrayList.forEach(Unknown Source)
+	at com.bridz.clinique_management.service.PatientImplementation.lambda$0(PatientImplementation.java:111)
+	at java.util.ArrayList.forEach(Unknown Source)
+	at com.bridz.clinique_management.service.PatientImplementation.addPatient(PatientImplementation.java:88)
+	at com.bridz.clinique_management.service.CliniqueImplementation.patient(CliniqueImplementation.java:88)
+	at com.bridz.clinique_management.controller.CliniqueController.DisplayUserMenu(CliniqueController.java:34)
+	at com.bridz.clinique_management.CliniqueManagementApplication.main(CliniqueManagementApplication.java:15)
+2020-06-06 10:12:24,732  INFO [main] - com.bridz.clinique_management.CliniqueManagementApplication.main 13 - Main method called
+2020-06-06 10:17:49,504  INFO [main] - com.bridz.clinique_management.service.CliniqueImplementation.lambda$1 143 - java.util.InputMismatchException
+java.util.InputMismatchException
+	at java.util.Scanner.throwFor(Unknown Source)
+	at java.util.Scanner.next(Unknown Source)
+	at java.util.Scanner.nextInt(Unknown Source)
+	at java.util.Scanner.nextInt(Unknown Source)
+	at com.bridz.clinique_management.service.CliniqueImplementation.patient(CliniqueImplementation.java:84)
+	at com.bridz.clinique_management.service.PatientImplementation.lambda$1(PatientImplementation.java:141)
+	at java.util.ArrayList.forEach(Unknown Source)
+	at com.bridz.clinique_management.service.PatientImplementation.lambda$0(PatientImplementation.java:111)
+	at java.util.ArrayList.forEach(Unknown Source)
+	at com.bridz.clinique_management.service.PatientImplementation.addPatient(PatientImplementation.java:88)
+	at com.bridz.clinique_management.service.CliniqueImplementation.patient(CliniqueImplementation.java:88)
+	at com.bridz.clinique_management.service.PatientImplementation.lambda$1(PatientImplementation.java:141)
+	at java.util.ArrayList.forEach(Unknown Source)
+	at com.bridz.clinique_management.service.PatientImplementation.lambda$0(PatientImplementation.java:111)
+	at java.util.ArrayList.forEach(Unknown Source)
+	at com.bridz.clinique_management.service.PatientImplementation.addPatient(PatientImplementation.java:88)
+	at com.bridz.clinique_management.service.CliniqueImplementation.patient(CliniqueImplementation.java:88)
+	at com.bridz.clinique_management.controller.CliniqueController.DisplayUserMenu(CliniqueController.java:34)
+	at com.bridz.clinique_management.CliniqueManagementApplication.main(CliniqueManagementApplication.java:15)
+2020-06-06 10:17:49,519  INFO [main] - com.bridz.clinique_management.service.CliniqueImplementation.addPatient 151 - java.util.ConcurrentModificationException
+java.util.ConcurrentModificationException
+	at java.util.ArrayList.forEach(Unknown Source)
+	at com.bridz.clinique_management.service.PatientImplementation.lambda$0(PatientImplementation.java:111)
+	at java.util.ArrayList.forEach(Unknown Source)
+	at com.bridz.clinique_management.service.PatientImplementation.addPatient(PatientImplementation.java:88)
+	at com.bridz.clinique_management.service.CliniqueImplementation.patient(CliniqueImplementation.java:88)
+	at com.bridz.clinique_management.service.PatientImplementation.lambda$1(PatientImplementation.java:141)
+	at java.util.ArrayList.forEach(Unknown Source)
+	at com.bridz.clinique_management.service.PatientImplementation.lambda$0(PatientImplementation.java:111)
+	at java.util.ArrayList.forEach(Unknown Source)
+	at com.bridz.clinique_management.service.PatientImplementation.addPatient(PatientImplementation.java:88)
+	at com.bridz.clinique_management.service.CliniqueImplementation.patient(CliniqueImplementation.java:88)
+	at com.bridz.clinique_management.controller.CliniqueController.DisplayUserMenu(CliniqueController.java:34)
+	at com.bridz.clinique_management.CliniqueManagementApplication.main(CliniqueManagementApplication.java:15)
+2020-06-06 10:17:53,674  INFO [main] - com.bridz.clinique_management.CliniqueManagementApplication.main 13 - Main method called
+2020-06-06 10:22:58,404  INFO [main] - com.bridz.clinique_management.CliniqueManagementApplication.main 13 - Main method called
+2020-06-06 10:25:33,205  INFO [main] - com.bridz.clinique_management.CliniqueManagementApplication.main 13 - Main method called
+2020-06-06 10:26:06,389  INFO [main] - com.bridz.clinique_management.CliniqueManagementApplication.main 13 - Main method called
+2020-06-06 12:33:21,213  INFO [main] - com.bridz.clinique_management.CliniqueManagementApplication.main 13 - Main method called
+2020-06-06 12:33:47,862  INFO [main] - com.bridz.clinique_management.CliniqueManagementApplication.main 13 - Main method called
