@@ -25,7 +25,7 @@ public class CliniqueController {
 		try {
 			chosedOption = scanner.nextInt();
 		} catch (Exception exception) {
-			new CliniqueManagementException(500,"Entered value is not valid");
+			throw new CliniqueManagementException(500,"Entered value is not valid");
 		}
 
 		switch (chosedOption) {
