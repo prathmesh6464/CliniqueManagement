@@ -2,7 +2,9 @@ package com.bridz.clinique_management.service;
 
 import java.io.File;
 import java.io.InputStream;
+
 import java.time.LocalDate;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -22,15 +24,12 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class PatientImplementation implements Patients {
 
-	List<Doctor> doctorList = new ArrayList<Doctor>();
-	Scanner scanner = GetInstance.INSTANCE.getScannerInstance();
-	File file = GetInstance.INSTANCE.getFileInstance();
-	ObjectMapper objectMapper = GetInstance.INSTANCE.getObjectMapperInstance();
-	InputStream inputStream;
+	private Scanner scanner = GetInstance.INSTANCE.getScannerInstance();
+	private File file = GetInstance.INSTANCE.getFileInstance();
+	private ObjectMapper objectMapper = GetInstance.INSTANCE.getObjectMapperInstance();
+	private InputStream inputStream;
 
 	public static Logger logger = Logger.getLogger(PatientImplementation.class);
-	int visitedPetientCount = 0;
-	int patientVisitorComparater = 0;
 
 	public void addPatient() {
 
