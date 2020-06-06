@@ -21,11 +21,11 @@ public class CliniqueController {
 		System.out.println("3. Doctors patient report");
 		System.out.println("4. Popular specialization");
 		System.out.println("5. Popular doctor");
-		
+
 		try {
 			chosedOption = scanner.nextInt();
 		} catch (Exception exception) {
-			throw new CliniqueManagementException(500,"Entered value is not valid");
+			throw new CliniqueManagementException(500, "Invalid input Value");
 		}
 
 		switch (chosedOption) {
