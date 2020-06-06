@@ -13,6 +13,7 @@ import com.bridz.clinique_management.model.Patient;
 import com.bridz.clinique_management.service.CliniqueImplementation;
 import com.bridz.clinique_management.service.DoctorImplementation;
 import com.bridz.clinique_management.service.PatientImplementation;
+import com.bridz.clinique_management.utility.ExtraServices;
 import com.bridz.clinique_management.controller.CliniqueController;
 
 public enum GetInstance {
@@ -60,5 +61,9 @@ public enum GetInstance {
 
 	public CliniqueController getCliniqueControllerInstance() {
 		return new CliniqueController();
+	}
+
+	public ExtraServices getExtraServicesInstance() {
+		return new ExtraServices();
 	}
 }
