@@ -10,17 +10,13 @@ import java.util.List;
 import java.util.Scanner;
 import java.util.Collections;
 
-import java.time.LocalDate;
-import java.time.LocalTime;
-import java.time.format.DateTimeFormatter;
-
+import com.bridz.clinique_management.exception.CliniqueManagementException;
 import com.bridz.clinique_management.model.Doctor;
 import com.bridz.clinique_management.model.Patient;
 import com.bridz.clinique_management.pattern.GetInstance;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.exc.MismatchedInputException;
 
 import org.apache.log4j.Logger;
 
@@ -34,6 +30,8 @@ public class CliniqueImplementation implements Clinique {
 	public static Logger logger = Logger.getLogger(CliniqueImplementation.class);
 	int visitedPetientCount = 0;
 	int patientVisitorComparater = 0;
+	int chosedOption;
+	InputStream inputStream;
 
 	public void doctor() {
 
@@ -43,7 +41,12 @@ public class CliniqueImplementation implements Clinique {
 		System.out.println("3. Search doctor by using id, name, specialization");
 		System.out.println("4. Quite");
 
-		int chosedOption = scanner.nextInt();
+		try {
+			chosedOption = scanner.nextInt();
+		} catch (Exception exception) {
+			logger.info(exception, exception);
+			throw new CliniqueManagementException(500, "Invalid input value");
+		}
 
 		switch (chosedOption) {
 		case 1:
@@ -81,7 +84,11 @@ public class CliniqueImplementation implements Clinique {
 		System.out.println("3. Search patient by using id, name or mobile number");
 		System.out.println("4. Quite");
 
-		int chosedOption = scanner.nextInt();
+		try {
+			chosedOption = scanner.nextInt();
+		} catch (Exception exception) {
+			logger.info(exception, exception);
+		}
 
 		switch (chosedOption) {
 		case 1:
@@ -115,8 +122,6 @@ public class CliniqueImplementation implements Clinique {
 
 	public void doctorPatientReport() {
 
-		InputStream inputStream;
-
 		System.out.println("Doctors petient report : ");
 
 		try {
@@ -127,7 +132,6 @@ public class CliniqueImplementation implements Clinique {
 			List<Doctor> doctorList = objectMapper.readValue(inputStream, typeReference);
 
 			if (doctorList.isEmpty()) {
-
 				System.out.println("\n Doctors is not available\n");
 				this.patient();
 			}
@@ -151,19 +155,16 @@ public class CliniqueImplementation implements Clinique {
 				});
 			});
 
-			if (System.in.read() != -1) {
-				GetInstance.INSTANCE.getCliniqueControllerInstance().DisplayUserMenu();
-			}
+			GetInstance.INSTANCE.getExtraServicesInstance().onButtonClick();
 
 		} catch (Exception exception) {
 			logger.info(exception, exception);
+			throw new CliniqueManagementException(512, "Doctor patient report");
 		}
 
 	}
 
 	public void popularSpecialization() {
-
-		InputStream inputStream;
 
 		try {
 			inputStream = GetInstance.INSTANCE.getFileInputStreamInstance();
@@ -173,7 +174,6 @@ public class CliniqueImplementation implements Clinique {
 			List<Doctor> doctorList = objectMapper.readValue(inputStream, typeReference);
 
 			if (doctorList.isEmpty()) {
-
 				System.out.println("\n Doctors is not available\n");
 				this.patient();
 			}
@@ -195,24 +195,20 @@ public class CliniqueImplementation implements Clinique {
 
 			temporaryCalculation.entrySet().forEach(data -> {
 				if (Collections.max(temporaryCalculation.values()) == data.getValue()) {
-
 					System.out.println("Popular specialization : " + data.getKey());
 				}
 			});
 
-			if (System.in.read() != -1) {
-				GetInstance.INSTANCE.getCliniqueControllerInstance().DisplayUserMenu();
-			}
+			GetInstance.INSTANCE.getExtraServicesInstance().onButtonClick();
 
 		} catch (Exception exception) {
 			logger.info(exception, exception);
+			throw new CliniqueManagementException(513, "Popular specialization exception");
 		}
 
 	}
 
 	public void popularDoctor() {
-
-		InputStream inputStream;
 
 		System.out.println("Popular doctor : ");
 
@@ -224,7 +220,6 @@ public class CliniqueImplementation implements Clinique {
 			List<Doctor> doctorList = objectMapper.readValue(inputStream, typeReference);
 
 			if (doctorList.isEmpty()) {
-
 				System.out.println("\n Doctors is not available\n");
 				this.patient();
 			}
@@ -248,12 +243,11 @@ public class CliniqueImplementation implements Clinique {
 				}
 			});
 
-			if (System.in.read() != -1) {
-				GetInstance.INSTANCE.getCliniqueControllerInstance().DisplayUserMenu();
-			}
+			GetInstance.INSTANCE.getExtraServicesInstance().onButtonClick();
 
 		} catch (Exception exception) {
 			logger.info(exception, exception);
+			throw new CliniqueManagementException(514, "Popular doctor exception");
 		}
 	}
 }
