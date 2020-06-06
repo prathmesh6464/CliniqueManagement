@@ -2,8 +2,10 @@ package com.bridz.clinique_management.service;
 
 import java.io.File;
 import java.io.InputStream;
+
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -20,15 +22,13 @@ import com.fasterxml.jackson.databind.exc.MismatchedInputException;
 
 public class DoctorImplementation {
 
-	List<Doctor> doctorList = new ArrayList<Doctor>();
-	Scanner scanner = GetInstance.INSTANCE.getScannerInstance();
-	File file = GetInstance.INSTANCE.getFileInstance();
-	ObjectMapper objectMapper = GetInstance.INSTANCE.getObjectMapperInstance();
-	InputStream inputStream;
+	private List<Doctor> doctorList = new ArrayList<Doctor>();
+	private Scanner scanner = GetInstance.INSTANCE.getScannerInstance();
+	private File file = GetInstance.INSTANCE.getFileInstance();
+	private ObjectMapper objectMapper = GetInstance.INSTANCE.getObjectMapperInstance();
+	private InputStream inputStream;
 
 	public static Logger logger = Logger.getLogger(DoctorImplementation.class);
-	int visitedPetientCount = 0;
-	int patientVisitorComparater = 0;
 
 	public void addDoctor() {
 
